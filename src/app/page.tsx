@@ -17,7 +17,7 @@ export default function Landing() {
           <Link href="/about" className="hover:text-">About</Link>
           <Link href="/community" className="hover:text-amber-200">Community</Link>
           <Link href="/speakers" className="hover:text-amber-200">Speakers</Link>
-          <Link href="/contact" className="hover:text-amber-200">Contact</Link>
+          <Link href="/contact" className="hover:text-">Contact</Link>
         </nav>
         <div className="ml-4">
           <Link
@@ -65,10 +65,10 @@ export default function Landing() {
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="group relative inline-flex items-center overflow-hidden rounded-full bg-amber-500 px-6 py-3 text-white shadow-md"
+              className="group relative inline-flex items-center overflow-hidden rounded-full bg-green-700 px-6 py-3 text-white shadow-md"
               onClick={() => (window.location.href = "/home")}
             >
-              <span className="mr-3 text-sm font-semibold">Slide to enter</span>
+              <p className="mr-3 text-sm font-semibold text-amber-500">Slide to enter</p>
               <span className="inline-block ml-2 rounded-full bg-white/20 px-3 py-1 text-xs font-medium">
                 →
               </span>
