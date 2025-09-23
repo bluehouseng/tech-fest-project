@@ -16,7 +16,7 @@ export default function Body() {
       </div> */}
 
       {/* Main section */}
-      <section className="flex min-h-screen items-center justify-center px-6 text-center">
+      <section className="flex min-h-screen items-center justify-center px-6 text-center -mt-20">
         <div className="z-10 mx-auto max-w-5xl">
           <motion.h1
             initial={{ y: 40, opacity: 0 }}
@@ -63,11 +63,11 @@ export default function Body() {
             </Link>
           </div>
 
-          <div className="mt-12 flex items-center justify-center gap-6 text-sm text-gray-600">
+          {/* <div className="mt-12 flex items-center justify-center gap-6 text-sm text-gray-600">
             <div>June 12–14 • Lagos</div>
             <div className="h-1 w-1 rounded-full bg-gray-400" />
             <div>Hybrid • In-person & Online</div>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -76,9 +76,7 @@ export default function Body() {
         Swipe → to enter
       </div>
 
-      <footer className="pointer-events-none fixed bottom-6 left-6 z-40 text-xs text-gray-400">
-        © TechFest — built with ❤️
-      </footer>
+      
     </>
   )
 }
