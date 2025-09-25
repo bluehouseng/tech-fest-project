@@ -48,21 +48,21 @@ function Card({ host }: { host: Host }) {
 
 export default function Host() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white -mt-26">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <motion.h2
-          initial={{ y: 40, opacity: 0 }}
+          initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.9 }}
           className="text-4xl font-bold text-black mb-4"
         >
          Our Hosts
         </motion.h2>
 
         <motion.h5
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.7 }}
+          initial={{ y: 40, opacity: 0 }}
+          animate={{ y: 10, opacity: 1 }}
+          transition={{ delay: 0.1, duration: 0.5 }}
           className="text-gray-600 mb-12"
         >
             Guiding the flow of TechFest with energy, insight, and passion
@@ -73,10 +73,10 @@ export default function Host() {
           {/* First Card */}
           <motion.div
             className="absolute -rotate-16 left-1/4 z-10"
-            whileHover={{ scale: 1,  }}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            whileHover={{ scale: 1.05, rotate: -10 }}
+            initial={{ opacity: 0, x: -200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.8, ease: "easeOut" }}
           >
             <Card host={hosts[0]} />
           </motion.div>
@@ -84,10 +84,10 @@ export default function Host() {
           {/* Second Card */}
           <motion.div
             className="absolute rotate-16 right-1/4 z-40"
-            whileHover={{ scale: 1,  }}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            whileHover={{ scale: 1.05, rotate:10 }}
+            initial={{ opacity: 0, x: 200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.8, ease: "easeOut", delay: 0.3 }}
           >
             <Card host={hosts[1]} />
           </motion.div>
