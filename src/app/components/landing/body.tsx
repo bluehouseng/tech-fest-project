@@ -5,17 +5,6 @@ import Link from "next/link"
 export default function Body() {
   return (
     <>
-      {/* Decorative shapes
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <svg className="absolute right-0 top-0 h-[420px] w-[420px] opacity-20" viewBox="0 0 600 600">
-          <circle cx="300" cy="300" r="280" fill="#e6f8eb" />
-        </svg>
-        <svg className="absolute left-0 bottom-0 h-[320px] w-[320px] opacity-15" viewBox="0 0 600 600">
-          <circle cx="300" cy="300" r="260" fill="#f5efe6" />
-        </svg>
-      </div> */}
-
-      {/* Main section */}
       <section className="flex min-h-screen items-center justify-center px-6 text-center -mt-20">
         <div className="z-10 mx-auto max-w-5xl">
           <motion.h1

@@ -1,20 +1,21 @@
 "use client"
-import { useState } from "react"
-import Link from "next/link"
-import { Menu, X } from "lucide-react"
-import { motion } from "framer-motion"
+import { useState } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { FaStar } from "react-icons/fa";
 
 export default function Header() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="inset-x-0 top-0 z-50 ">
+    <header className="inset-x-0 top-0 z-50 fixed">
       {/* Navbar */}
-      <div className="flex items-center justify-between px-6 py-4">
+      <div className="flex items-center justify-between px-6 py-4 bg-white">
         <div className="text-lg font-semibold text-green-800">TechFest</div>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6 text-sm text-gray-700">
+        <nav className="hidden md:flex items-center gap-6 text-sm text-white-700">
           <Link href="/" className="hover:text-amber-500">Home</Link>
           <Link href="/about" className="hover:text-amber-500">About</Link>
           <Link href="/community" className="hover:text-amber-500">Community</Link>
@@ -40,19 +41,41 @@ export default function Header() {
       </div>
 
     
-      <div className="overflow-hidden bg-green-700 text-white md:height-10">
+      <div className="overflow-hidden bg-green-700 text-white">
         <motion.div
-          className="flex space-x-26 text-sm font-medium tracking-wide py-2"
-          animate={{ x: ["100%", "-100%"] }}
-          transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+          className="flex items-center gap-8 text-sm font-sm  py-2 sm:py-2 w-[200%] sm:w-[150%] md:w-full {poppins.className}"
+          animate={{ x: ["100%", "-100%"]  }}
+          transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
         >
-  
-          <p>🚀 Welcome to TechFest 2025
-          </p>
+        
+          <p> Welcome to TechFest 2025</p>
+          <span className="material-symbols-outlined center">
+          star
+          </span>
+
           <p>Innovation</p>
+          <span className="material-symbols-outlined center">
+          star
+          </span>
+
           <p>Creativity</p>
+          <span className="material-symbols-outlined center">
+          star
+          </span>
+
           <p>Networking</p>
+           <span className="material-symbols-outlined center">
+          star
+          </span>
+
           <p>World-class Speakers</p>
+          <span className="material-symbols-outlined center">
+          star
+          </span>
+
+          <p> #TechFestJos
+
+          </p>
         </motion.div>
       </div>
 
