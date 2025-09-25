@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
-import { FaStar } from "react-icons/fa";
+
 
 export default function Header() {
   const [open, setOpen] = useState(false)
