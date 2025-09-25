@@ -69,8 +69,8 @@ export default function KeynoteSpeakers() {
           })}
         </div>
         {/* One button for all cards */}
-        <button id='btn' className="bg-green-700 text-white py-3 px-6 mt-2.5 rounded-lg hover:bg-gray-500 transition">
-          Meet the Hosts
+       <button className="bg-gradient-to-tl from-green-300 to-green-900 px-10 py-2 rounded-sm text-white cursor-pointer">
+          Meet Our Speakers
         </button>
       </div>
     </section>
