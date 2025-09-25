@@ -8,13 +8,13 @@ export default function Header() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="inset-x-0 top-0 z-50 ">
+    <header className="inset-x-0 top-0 z-50 fixed">
       {/* Navbar */}
       <div className="flex items-center justify-between px-6 py-4">
         <div className="text-lg font-semibold text-green-800">TechFest</div>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6 text-sm text-gray-700">
+        <nav className="hidden md:flex items-center gap-6 text-sm text-white-700">
           <Link href="/" className="hover:text-amber-500">Home</Link>
           <Link href="/about" className="hover:text-amber-500">About</Link>
           <Link href="/community" className="hover:text-amber-500">Community</Link>
