@@ -40,14 +40,15 @@ export default function Header() {
       </div>
 
     
-      <div className="overflow-hidden bg-green-700 text-white">
+      <div className="overflow-hidden bg-green-700 text-white md:height-10">
         <motion.div
-          className="flex space-x-8 text-sm font-medium tracking-wide py-2"
+          className="flex space-x-26 text-sm font-medium tracking-wide py-2"
           animate={{ x: ["100%", "-100%"] }}
           transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
         >
   
-          <p>🚀 Welcome to TechFest 2025</p>
+          <p>🚀 Welcome to TechFest 2025
+          </p>
           <p>Innovation</p>
           <p>Creativity</p>
           <p>Networking</p>
@@ -57,7 +58,7 @@ export default function Header() {
 
      
       {open && (
-        <div className="absolute left-0 w-full bg-white shadow-md flex flex-col items-center py-4 space-y-4 md:hidden">
+        <div className="absolute left-0 w-full bg-white shadow-md flex flex-col items-center py-4 space-y-4 md:hidden z-40">
           <Link href="/" onClick={() => setOpen(false)}>Home</Link>
           <Link href="/about" onClick={() => setOpen(false)}>About</Link>
           <Link href="/community" onClick={() => setOpen(false)}>Community</Link>

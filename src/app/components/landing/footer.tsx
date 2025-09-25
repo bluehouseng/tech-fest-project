@@ -67,7 +67,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="mt-10 border-t border-gray-300 pt-6 text-center text-sm text-gray-500">
+      <div className="mt-10  pt-6 text-center text-sm text-gray-500">
         © {new Date().getFullYear()} TechFest. Built with ❤️ in Africa.
       </div>
     </footer>
