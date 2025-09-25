@@ -35,7 +35,7 @@ export default function Speakers() {
               rotate: 1,
             }}
             transition={{ duration: 0.3 }}
-            className="relative bg-white rounded-xl shadow-md overflow-hidden group cursor-pointer"
+            className="relative bg-white rounded-md overflow-hidden group cursor-pointer"
           >
             {/* Speaker Image */}
             <div className="h-56 w-full bg-gray-200 overflow-hidden">

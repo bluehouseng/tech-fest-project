@@ -29,6 +29,7 @@ function Card({ host }: { host: Host }) {
     <div className="relative w-72 h-[400px] bg-white rounded-md overflow-hidden shadow-xl">
       {/* Top overlay with name + role */}
       <div className="absolute top-0 left-0 w-full bg-gray-700 bg-opacity-90 p-4 z-10">
+        
         <h3 className="text-lg font-semibold text-white">{host.name}</h3>
         <p className="text-sm text-gray-300">{host.role}</p>
       </div>
@@ -49,11 +50,23 @@ export default function Host() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-black mb-4">Our Hosts</h2>
+        <motion.h2
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl font-bold text-black mb-4"
+        >
+         Our Hosts
+        </motion.h2>
 
-        <h5 className="text-gray-600 mb-12">
-          Guiding the flow of TechFest with energy, insight, and passion
-        </h5>
+        <motion.h5
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.7 }}
+          className="text-gray-600 mb-12"
+        >
+            Guiding the flow of TechFest with energy, insight, and passion
+        </motion.h5>
 
         {/* Overlapping rotated cards */}
         <div className="relative flex items-center justify-center h-[420px] ">
@@ -61,6 +74,9 @@ export default function Host() {
           <motion.div
             className="absolute -rotate-16 left-1/4 z-10"
             whileHover={{ scale: 1,  }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
           >
             <Card host={hosts[0]} />
           </motion.div>
@@ -69,6 +85,9 @@ export default function Host() {
           <motion.div
             className="absolute rotate-16 right-1/4 z-40"
             whileHover={{ scale: 1,  }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
           >
             <Card host={hosts[1]} />
           </motion.div>
