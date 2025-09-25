@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/landing/header";
 import Footer from "./components/landing/footer";
+import { Poppins } from "next/font/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,8 +27,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=star" />
+      </head>
       <body
-        className="font-poppins"
+        className="{poppins.className}"
       >
         <Header />
 

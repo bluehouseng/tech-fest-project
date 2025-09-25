@@ -22,15 +22,7 @@ const agenda = [
       { time: "04:00 PM", title: "Hackathon Kickoff" },
     ],
   },
-  {
-    day: "Day 3 - Celebration",
-    date: "June 14, 2025",
-    events: [
-      { time: "10:00 AM", title: "Community Demos & Showcase" },
-      { time: "12:00 PM", title: "Award Ceremony" },
-      { time: "03:00 PM", title: "Closing Party & Live Music" },
-    ],
-  },
+  
 ]
 
 export default function Agenda() {
@@ -49,7 +41,7 @@ export default function Agenda() {
           3 days of innovation, collaboration, and unforgettable experiences.
         </p>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
+        <div className="mt-12 grid gap-8 md:grid-cols-2">
           {agenda.map((day, index) => (
             <motion.div
               key={index}
