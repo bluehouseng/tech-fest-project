@@ -39,22 +39,16 @@ export default function KeynoteSpeakers() {
   </h5>
 
         <div className="relative flex justify-center gap-3 items-center h-[520px]">
-          //{keynoteSpeakers.map((speaker, index) => {
-           // const rotations = ["-rotate-12", "rotate-0", "rotate-12"];
-            // const positions = [
-            //   "left-0 top-16",
-            //   "left-1/2 -translate-x-1/2 top-0 z-20",
-            //    "right-0 top-16",
-            //  ];
+          {keynoteSpeakers.map((speaker, ) => {
+          
 
             return (
               <div
                 key={speaker.name}
-                //className={`absolute ${positions[index]} ${rotations[index]} hover:rotate-0 transition-transform duration-500`}
-              >
-                <div className="relative w-72 h-96 bg-white rounded-md overflow-hidden shadow-2xl">
+               >
+                <div className="relative w-72 h-96  rounded-md overflow-hidden shadow-2xl">
                   {/* Top overlay with name + role */}
-                  <div className="absolute top-0 left-0 w-full bg-gray-600 bg-opacity-90 p-4 z-10">
+                  <div className="absolute top-0 left-0 w-full  bg-opacity-90 p-4 z-10">
                     <h3 className="text-lg font-semibold text-white">
                       {speaker.name}
                     </h3>
@@ -74,6 +68,10 @@ export default function KeynoteSpeakers() {
             );
           })}
         </div>
+        {/* One button for all cards */}
+        <button id='btn' className="bg-green-700 text-white py-3 px-6 mt-2.5 rounded-lg hover:bg-gray-500 transition">
+          Meet the Hosts
+        </button>
       </div>
     </section>
   );
