@@ -69,7 +69,7 @@ export default function KeynoteSpeakers() {
           })}
         </div>
         {/* One button for all cards */}
-       <button className="bg-gradient-to-tl from-green-300 to-green-900 px-10 py-2 rounded-sm text-white cursor-pointer">
+       <button className="bg-gradient-to-tl from-green-300 to-green-900 px-10 py-2 rounded-full shadow-sm text-white cursor-pointer">
           Meet Our Speakers
         </button>
       </div>
