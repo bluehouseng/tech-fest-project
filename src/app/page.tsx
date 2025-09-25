@@ -8,12 +8,14 @@ import Footer from "./components/landing/footer";
 
 export default function LandingPage() {
   return (
-	  <main>
-		<Header />
-		<Body />
-		<Agenda />
-		<Partners />
-		<Footer />
+	<main className="relative min-h-screen bg-[#fafaf9] overflow-hidden">
+	
+
+			<div className="relative z-10">
+				<Body />
+				<Agenda />
+				<Partners />
+			</div>
 	  </main>
   );
 }

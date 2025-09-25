@@ -40,14 +40,14 @@ export default function Header() {
       </div>
 
     
-      <div className="overflow-hidden bg-green-700 text-white md:height-10">
+      <div className="overflow-hidden bg-green-700 text-white">
         <motion.div
-          className="flex space-x-26 text-sm font-medium tracking-wide py-2"
-          animate={{ x: ["100%", "-100%"] }}
+          className="flex space-x-26 text-sm font-medium  py-2 sm:py-2 w-[200%] sm:w-[150%] md:w-full"
+          animate={{ x: ["100%", "-100%"]  }}
           transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
         >
-  
-          <p>🚀 Welcome to TechFest 2025
+          {/*tracking-wide style use??? */}
+          <p> Welcome to TechFest 2025
           </p>
           <p>Innovation</p>
           <p>Creativity</p>
