@@ -1,5 +1,5 @@
-
 "use client";
+
 import { motion } from "framer-motion";
 
 const speakers = Array.from({ length: 20 }, (_, i) => ({

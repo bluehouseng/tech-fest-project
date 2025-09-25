@@ -1,8 +1,9 @@
 "use client"
-import { useState } from "react"
-import Link from "next/link"
-import { Menu, X } from "lucide-react"
-import { motion } from "framer-motion"
+import { useState } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { FaStar } from "react-icons/fa";
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -10,7 +11,7 @@ export default function Header() {
   return (
     <header className="inset-x-0 top-0 z-50 fixed">
       {/* Navbar */}
-      <div className="flex items-center justify-between px-6 py-4">
+      <div className="flex items-center justify-between px-6 py-4 bg-white">
         <div className="text-lg font-semibold text-green-800">TechFest</div>
 
         {/* Desktop nav */}
@@ -42,17 +43,39 @@ export default function Header() {
     
       <div className="overflow-hidden bg-green-700 text-white">
         <motion.div
-          className="flex space-x-26 text-sm font-medium  py-2 sm:py-2 w-[200%] sm:w-[150%] md:w-full"
+          className="flex items-center gap-8 text-sm font-sm  py-2 sm:py-2 w-[200%] sm:w-[150%] md:w-full {poppins.className}"
           animate={{ x: ["100%", "-100%"]  }}
-          transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+          transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
         >
-          {/*tracking-wide style use??? */}
-          <p> Welcome to TechFest 2025
-          </p>
+        
+          <p> Welcome to TechFest 2025</p>
+          <span className="material-symbols-outlined center">
+          star
+          </span>
+
           <p>Innovation</p>
+          <span className="material-symbols-outlined center">
+          star
+          </span>
+
           <p>Creativity</p>
+          <span className="material-symbols-outlined center">
+          star
+          </span>
+
           <p>Networking</p>
+           <span className="material-symbols-outlined center">
+          star
+          </span>
+
           <p>World-class Speakers</p>
+          <span className="material-symbols-outlined center">
+          star
+          </span>
+
+          <p> #TechFestJos
+
+          </p>
         </motion.div>
       </div>
 
