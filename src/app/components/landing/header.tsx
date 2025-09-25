@@ -26,7 +26,7 @@ export default function Header() {
         {/* Desktop button */}
         <Link
           href="/register"
-          className="hidden md:inline-block rounded-full border border-green-700 bg-green-700 px-4 py-2 text-sm font-medium text-white shadow-sm"
+          className="hidden md:inline-block rounded-full border bg-gradient-to-tl from-green-300 to-green-900 cursor-pointer px-4 py-2 text-sm font-medium text-white shadow-sm"
         >
           Register Now
         </Link>
@@ -89,7 +89,7 @@ export default function Header() {
           <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
           <Link
             href="/register"
-            className="rounded-full bg-green-700 px-4 py-2 text-sm text-white hover:bg-amber-500"
+            className="bg-gradient-to-tl from-green-300 to-green-900 px-10 py-2 rounded-full text-white cursor-pointer shadow-sm"
             onClick={() => setOpen(false)}
           >
             Register Now
@@ -97,5 +97,6 @@ export default function Header() {
         </div>
       )}
     </header>
+    
   )
 }

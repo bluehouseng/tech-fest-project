@@ -27,7 +27,7 @@ const agenda = [
 
 export default function Agenda() {
   return (
-    <section className="w-full bg-[#f5f5f4] py-16 px-6 md:px-12 font-poppins -mt-30">
+    <section className="w-full bg-[#f5f5f4] py-16 px-6 md:px-12 font-poppins mt-30">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ y: 30, opacity: 0 }}
@@ -38,7 +38,7 @@ export default function Agenda() {
           Agenda
         </motion.h2>
         <p className="mt-3 text-center text-gray-600">
-          3 days of innovation, collaboration, and unforgettable experiences.
+          2 days of innovation, collaboration, and unforgettable experiences.
         </p>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">
