@@ -13,17 +13,17 @@ const keynoteSpeakers: Speaker[] = [
   {
     name: "Dr. Ayo Omotayo",
     role: "Keynote Speaker",
-    image: "/images/speaker_ayo.jpg",
+    image: "/images/pic7.jpg",
   },
   {
     name: "Prof. Jane Doe",
     role: "AI & Future of Work",
-    image: "/images/speaker_jane.jpg",
+    image: "/images/pic2.jpg",
   },
   {
     name: "Engr. Musa Bello",
     role: "Tech Policy & Innovation",
-    image: "/images/speaker_musa.jpg",
+    image: "/images/pic6.jpg",
   },
 ];
 
@@ -48,7 +48,7 @@ export default function KeynoteSpeakers() {
                >
                 <div className="relative w-72 h-96  rounded-md overflow-hidden shadow-2xl">
                   {/* Top overlay with name + role */}
-                  <div className="absolute top-0 left-0 w-full  bg-opacity-90 p-4 z-10">
+                  <div className="absolute top-0 left-0 w-full  bg-opacity-90 p-4 z-10 text-left">
                     <h3 className="text-lg font-semibold text-white">
                       {speaker.name}
                     </h3>
