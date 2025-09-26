@@ -41,7 +41,8 @@ export default function Header() {
       </div>
 
     
-      <div className="overflow-hidden bg-green-700 text-white">
+      <div className="overflow-hidden 
+      bg-green-900 text-white">
         <motion.div
           className="flex items-center gap-8 text-sm font-sm  py-2 sm:py-2 w-[200%] sm:w-[150%] md:w-full {poppins.className}"
           animate={{ x: ["100%", "-100%"]  }}

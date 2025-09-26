@@ -27,20 +27,16 @@ const hosts: Host[] = [
 function Card({ host }: { host: Host }) {
   return (
     <div className="relative w-72 h-[400px] bg-white rounded-md overflow-hidden shadow-xl">
-      {/* Top overlay with name + role */}
-      {/* <div className="absolute top-0 left-0 w-full  bg-opacity-90 p-4 z-10">
-        
+      {/* Top overlay with name + role
+       */}
+      
+      <div className="absolute top-0 left-0 w-full  bg-opacity-90 p-4 z-10 text-left">
         <h3 className="text-lg font-semibold text-white">{host.name}</h3>
         <p className="text-sm text-gray-300">{host.role}</p>
-      </div> */}
-      {/* Top overlay with name + role */}
-<div className="absolute top-0 left-0 w-full  bg-opacity-90 p-4 z-10 text-left">
-  <h3 className="text-lg font-semibold text-white">{host.name}</h3>
-  <p className="text-sm text-gray-300">{host.role}</p>
-</div>
+      </div>
 
 
-      {/* Host Image */}
+            {/* Host Image */}
       <Image
         src={host.image}
         alt={host.name}
@@ -75,7 +71,7 @@ export default function Host() {
         </motion.h5>
 
         {/* Overlapping rotated cards */}
-        <div className="relative flex items-center justify-center h-[420px] ">
+        <div className="relative flex flex-col items-center justify-center h-[420px] md:flex-row gap-4">
           {/* First Card */}
           <motion.div
             className="absolute -rotate-16 left-1/4 z-10"
