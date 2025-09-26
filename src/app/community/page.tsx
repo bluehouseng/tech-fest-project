@@ -1,9 +1,8 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 // Sample data for cards (replace with your own)
@@ -48,6 +47,16 @@ const members = [
 
 const Page = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const swiperRef = useRef(null);
+
+  // Ensure Swiper updates pagination after mount
+  useEffect(() => {
+    if (swiperRef.current) {
+      swiperRef.current.pagination.update();
+      setActiveIndex(swiperRef.current.realIndex);
+      console.log('Swiper Initialized, Real Index:', swiperRef.current.realIndex);
+    }
+  }, []);
 
   return (
     <div className="p-16">
@@ -60,77 +69,105 @@ const Page = () => {
           technological landscape.
         </p>
 
-        <div className="w-full max-w-5xl mt-8">
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={20}
-            slidesPerView={3}
-            centeredSlides={true}
-            loop={true}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{
-              delay: 3000, // Slide every 3 seconds
-              disableOnInteraction: false, // Continue autoplay after interaction
-            }}
-            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-            className="mySwiper"
-          >
-            {members.map((member, index) => (
-              <SwiperSlide key={member.id}>
-                <div
-                  className={`transition-all duration-300 ease-in-out bg-white shadow-lg rounded-lg p-6 text-center border ${
-                    index === activeIndex
-                      ? 'scale-105 z-10 border-green-500'
-                      : 'scale-90 opacity-70'
-                  }`}
-                >
-                  <div className="w-16 h-16 rounded-full bg-green-300 mx-auto mb-4 flex items-center justify-center font-bold text-lg text-white">
-                    {member.name.charAt(0)}
+        <div className="w-full h-[] mt-16 mb-10 md:mb-16 relative px-24">
+          {/* Increased height and proper overflow handling */}
+          <div className="h-[450px] py-8">
+            <Swiper
+              modules={[Pagination, Autoplay]}
+              spaceBetween={20}
+              slidesPerView={3}
+              centeredSlides={true}
+              loop={true}
+              pagination={{
+                clickable: true,
+                el: '.custom-pagination',
+              }}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              onSlideChange={(swiper) => {
+                console.log('Slide Changed, Real Index:', swiper.realIndex);
+                setActiveIndex(swiper.realIndex);
+              }}
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+                console.log('Swiper Instance:', swiper);
+              }}
+              className="h-full"
+              breakpoints={{
+                320: {
+                  slidesPerView: 1,
+                  spaceBetween: 20,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 20,
+                },
+              }}
+            >
+              {members.map((member, index) => (
+                <SwiperSlide key={member.id} className="flex justify-center items-center h-full">
+                  <div
+                    className={`transition-all duration-300 ease-in-out bg-white shadow-lg rounded-lg p-6 text-center border h-64 w-full max-w-sm ${
+                      index === activeIndex
+                        ? 'scale-110 z-10 border-green-500 shadow-xl'
+                        : 'scale-95 opacity-80'
+                    }`}
+                  >
+                    <div className="w-16 h-16 rounded-full bg-green-300 mx-auto mb-4 flex items-center justify-center font-bold text-lg text-white">
+                      {member.name.charAt(0)}
+                    </div>
+                    <h2 className="text-lg font-semibold mb-2">{member.name}</h2>
+                    <p className="text-green-700 font-medium mb-2">{member.role}</p>
+                    <p className="text-sm text-gray-600 leading-relaxed">{member.description}</p>
                   </div>
-                  <h2 className="text-lg font-semibold">{member.name}</h2>
-                  <p className="text-green-700 font-medium">{member.role}</p>
-                  <p className="text-sm text-gray-600">{member.description}</p>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
 
+          {/* Custom pagination positioned below cards with reduced spacing */}
+          <div className="custom-pagination flex justify-center mt-4 space-x-3">
+            {members.map((_, index) => (
+              <button
+                key={index}
+                className={`rounded-full transition-all duration-300 ease-in-out cursor-pointer hover:scale-110 ${
+                  index === activeIndex 
+                    ? 'w-4 h-4 bg-green-500 scale-125' 
+                    : 'w-3 h-3 bg-green-300 hover:bg-green-400'
+                }`}
+                onClick={() => {
+                  if (swiperRef.current) {
+                    swiperRef.current.slideToLoop(index);
+                    setActiveIndex(index);
+                  }
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Minimal custom CSS for Swiper specifics */}
           <style jsx>{`
-            .swiper-slide {
-              display: flex;
-              justify-content: center;
+            .swiper-pagination {
+              display: none !important;
+            }
+            .swiper-wrapper {
               align-items: center;
-            }
-            .swiper-button-next,
-            .swiper-button-prev {
-              color: #ffffff;
-              background: rgba(0, 0, 0, 0.5);
-              border-radius: 50%;
-              width: 40px; /* Adjusted for better visibility */
-              height: 40px;
-            }
-            .swiper-button-next:after,
-            .swiper-button-prev:after {
-              font-size: 20px; /* Adjusted for better proportionality */
-            }
-            .swiper-pagination-bullet {
-              background: #ffffff;
-              opacity: 0.7;
-            }
-            .swiper-pagination-bullet-active {
-              background: #22c55e;
-              opacity: 1;
             }
           `}</style>
         </div>
       </div>
 
       <div className="flex flex-col items-center justify-center mt-10 gap-4">
-        <p>
-          Join the <span className="text-green-700">1000+</span> participants who have already signed up for the event
+        <p className="text-center">
+          Join the <span className="text-green-700 font-semibold">1000+</span> participants who have already signed up for the event
         </p>
-        <button className="bg-gradient-to-tl from-green-300 to-green-900 px-10 py-2 rounded-sm text-white cursor-pointer">
+        <button className="bg-gradient-to-tl from-green-300 to-green-900 px-10 py-2 rounded-sm text-white cursor-pointer transition-all duration-300 hover:from-green-400 hover:to-green-800 hover:shadow-lg transform hover:scale-105">
           Join the Channel
         </button>
       </div>
