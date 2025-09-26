@@ -12,7 +12,9 @@ export default function Header() {
     <header className="inset-x-0 top-0 z-50 fixed">
       {/* Navbar */}
       <div className="flex items-center justify-between px-6 py-4 bg-white">
-        <div className="text-lg font-semibold text-green-800">TechFest</div>
+        <Link className="text-lg font-semibold text-green-800" href="/">
+          TechFest
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6 text-sm text-white-700">
@@ -41,7 +43,8 @@ export default function Header() {
       </div>
 
     
-      <div className="overflow-hidden bg-green-700 text-white">
+      <div className="overflow-hidden 
+      bg-green-900 text-white">
         <motion.div
           className="flex items-center gap-8 text-sm font-sm  py-2 sm:py-2 w-[200%] sm:w-[150%] md:w-full {poppins.className}"
           animate={{ x: ["100%", "-100%"]  }}

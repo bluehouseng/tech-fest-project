@@ -2,6 +2,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import {motion} from "framer-motion";
 
 interface Speaker {
   name: string;
@@ -45,7 +47,7 @@ export default function KeynoteSpeakers() {
             return (
               <div
                 key={speaker.name}
-               >
+                >
                 <div className="relative w-72 h-96  rounded-md overflow-hidden shadow-2xl">
                   {/* Top overlay with name + role */}
                   <div className="absolute top-0 left-0 w-full  bg-opacity-90 p-4 z-10 text-left">
@@ -68,10 +70,27 @@ export default function KeynoteSpeakers() {
             );
           })}
         </div>
+        {/* bg-gradient-to-tl from-green-300 to-green-900 px-10 py-2 rounded-full shadow-sm text-white cursor-pointer */}
         {/* One button for all cards */}
-       <button className="bg-gradient-to-tl from-green-300 to-green-900 px-10 py-2 rounded-full shadow-sm text-white cursor-pointer">
-          Meet Our Speakers
-        </button>
+        <motion.button
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
+            className="group relative inline-flex items-center overflow-hidden rounded-full bg-gradient-to-tl from-green-300 to-green-900 px-10 py-2 cursor-pointer shadow-md"
+            onClick={() => (window.location.href = "/home")}
+          >
+            <Link className="text-white" href="/speakers">
+              Meet our Speakers
+            </Link>
+          <span className="inline-block ml-2 rounded-full bg-white/20 px-3 py-1 text-xs font-medium">
+            →
+          </span>
+          <motion.span
+            className="absolute -left-32 h-full w-32 bg-white/10 backdrop-blur"
+            animate={{ x: [0, 520] }}
+            transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
+          />
+
+        </motion.button>
       </div>
     </section>
   );
