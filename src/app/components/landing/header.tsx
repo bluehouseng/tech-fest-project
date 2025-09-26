@@ -12,7 +12,9 @@ export default function Header() {
     <header className="inset-x-0 top-0 z-50 fixed">
       {/* Navbar */}
       <div className="flex items-center justify-between px-6 py-4 bg-white">
-        <div className="text-lg font-semibold text-green-800">TechFest</div>
+        <Link className="text-lg font-semibold text-green-800" href="/">
+          TechFest
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6 text-sm text-white-700">
