@@ -14,12 +14,12 @@ const hosts: Host[] = [
   {
     name: "Ada Johnson",
     role: "Event Host",
-    image: "/images/host_ada.jpg",
+    image: "/images/pic4.jpg",
   },
   {
     name: "Tunde Smith",
     role: "Co-Host",
-    image: "/images/host_tunde.jpg",
+    image: "/images/pic5.jpg",
   },
 ];
 
@@ -28,11 +28,17 @@ function Card({ host }: { host: Host }) {
   return (
     <div className="relative w-72 h-[400px] bg-white rounded-md overflow-hidden shadow-xl">
       {/* Top overlay with name + role */}
-      <div className="absolute top-0 left-0 w-full bg-gray-700 bg-opacity-90 p-4 z-10">
+      {/* <div className="absolute top-0 left-0 w-full  bg-opacity-90 p-4 z-10">
         
         <h3 className="text-lg font-semibold text-white">{host.name}</h3>
         <p className="text-sm text-gray-300">{host.role}</p>
-      </div>
+      </div> */}
+      {/* Top overlay with name + role */}
+<div className="absolute top-0 left-0 w-full  bg-opacity-90 p-4 z-10 text-left">
+  <h3 className="text-lg font-semibold text-white">{host.name}</h3>
+  <p className="text-sm text-gray-300">{host.role}</p>
+</div>
+
 
       {/* Host Image */}
       <Image
