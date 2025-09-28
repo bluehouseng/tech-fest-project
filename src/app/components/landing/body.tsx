@@ -1,20 +1,79 @@
 "use client"
-import { motion } from "framer-motion"
+import { motion, Variants } from "framer-motion"
 import Link from "next/link"
 
+const sentence: Variants =  {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.08, // delay between each letter
+    },
+  },
+};
+
+const letter: Variants = {
+  hidden: { opacity: 0, scale: 0.3, y: 50 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { 
+      type: "spring", 
+      stiffness: 500, 
+      damping: 20,
+    },
+  },
+};
+
 export default function Body() {
+  const part1 = "Welcome to "; // normal color
+  const part2 = "TechFest";    // highlighted in green
   return (
     <>
       <section className="flex min-h-screen items-center justify-center px-6 text-center -mt-20">
         <div className="z-10 mx-auto max-w-5xl">
-          <motion.h1
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+           <motion.h1
+              initial="hidden"
+              animate="visible"
+              variants={sentence}
+              className="mx-auto max-w-3xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl"
+              >
+              {/* Part 1 (default color) */}
+              {part1.split("").map((char, index) => (
+                <motion.span 
+                  key={`p1-${index}`} 
+                  variants={letter} 
+                  className="text-green-900">
+                    {char === " " ? "\u00A0" : char}
+                </motion.span>
+              ))}
+
+            {/* Part 2 (highlighted in green) */}
+            {part2.split("").map((char, index) => (
+              <motion.span 
+                key={`p2-${index}`} 
+                variants={letter} 
+                className="text-green-700">
+                {char}
+              </motion.span>
+              ))}
+             </motion.h1>
+
+          {/* <motion.h1
+            initial="hidden"
+            animate="visible"
+            variants={sentence}
             className="mx-auto max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-green-900 sm:text-5xl md:text-6xl"
           >
+            {text.split("").map((char, index) => (
+            <motion.span key={index} variants={letter}>
+            {char === " " ? "\u00A0" : char}
+            </motion.span>
+            ))}
             Welcome to <span className="text-green-700">TechFest</span>
-          </motion.h1>
+          </motion.h1> */}
 
           <motion.p
             initial={{ y: 20, opacity: 0 }}
