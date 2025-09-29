@@ -2,7 +2,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import {motion} from "framer-motion";
 
 interface Speaker {
@@ -77,9 +76,6 @@ export default function KeynoteSpeakers() {
             onClick={() => (window.location.href = "/speakers")}
           >
             <p className="text-white">Meet our speakers</p>
-            {/* <Link className="text-white" href="/speakers">
-              Meet our Speakers
-            </Link> */}
           <span className="inline-block ml-2 rounded-full bg-white/20 px-3 py-1 text-xs font-medium">
             →
           </span>
