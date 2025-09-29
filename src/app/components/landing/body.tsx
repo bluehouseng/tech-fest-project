@@ -28,11 +28,11 @@ const letter: Variants = {
 };
 
 export default function Body() {
-  const part1 = "Welcome to "; // normal color
-  const part2 = "TechFest";    // highlighted in green
+  const part1 = "Welcome to  "; // normal color
+  const part2 = "Jos TechFest";    // highlighted in green
   return (
     <>
-      <section className="flex min-h-screen items-center justify-center px-6 text-center -mt-20">
+      <section className="flex min-h-screen items-center justify-center px-6 text-center ">
         <div className="z-10 mx-auto max-w-5xl">
            <motion.h1
               initial="hidden"
