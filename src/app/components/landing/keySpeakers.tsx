@@ -70,17 +70,16 @@ export default function KeynoteSpeakers() {
             );
           })}
         </div>
-        {/* bg-gradient-to-tl from-green-300 to-green-900 px-10 py-2 rounded-full shadow-sm text-white cursor-pointer */}
-        {/* One button for all cards */}
         <motion.button
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             className="group relative inline-flex items-center overflow-hidden rounded-full bg-gradient-to-tl from-green-300 to-green-900 px-10 py-2 cursor-pointer shadow-md"
-            onClick={() => (window.location.href = "/home")}
+            onClick={() => (window.location.href = "/speakers")}
           >
-            <Link className="text-white" href="/speakers">
+            <p className="text-white">Meet our speakers</p>
+            {/* <Link className="text-white" href="/speakers">
               Meet our Speakers
-            </Link>
+            </Link> */}
           <span className="inline-block ml-2 rounded-full bg-white/20 px-3 py-1 text-xs font-medium">
             →
           </span>
@@ -89,7 +88,6 @@ export default function KeynoteSpeakers() {
             animate={{ x: [0, 520] }}
             transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
           />
-
         </motion.button>
       </div>
     </section>
