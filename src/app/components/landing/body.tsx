@@ -32,7 +32,10 @@ export default function Body() {
   const part2 = "Jos TechFest";    // highlighted in green
   return (
     <>
+
       <section className="flex min-h-screen items-center justify-center px-6 text-center ">
+
+     
         <div className="z-10 mx-auto max-w-5xl">
            <motion.h1
               initial="hidden"
@@ -118,14 +121,12 @@ export default function Body() {
             <div>Hybrid • In-person & Online</div>
           </div> */}
         </div>
+
+         <div className="absolute bottom-8 left-0 right-0 z-20 flex items-center justify-center text-xs text-gray-500 sm:hidden">
+          Swipe → to enter
+        </div>
+
       </section>
-
-      {/* Swipe hint (mobile only) */}
-      <div className="absolute bottom-8 left-0 right-0 z-20 flex items-center justify-center text-xs text-gray-500 sm:hidden">
-        Swipe → to enter
-      </div>
-
-      
     </>
   )
 }
