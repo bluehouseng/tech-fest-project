@@ -30,13 +30,9 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=star" />
       </head>
-      <body
-        className="{poppins.className}"
-      >
+      <body className="{poppins.className}">
         <Header />
-
         <main className="pt-20">{children}</main>
-
         <Footer />
       </body>
     </html>
