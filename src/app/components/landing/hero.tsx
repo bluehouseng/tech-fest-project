@@ -9,7 +9,7 @@ const sentence: Variants =  {
     opacity: 1,
     transition: {
       delayChildren: 0.2,
-      staggerChildren: 0.08, // delay between each letter
+      staggerChildren: 0.08,
     },
   },
 };
@@ -26,7 +26,7 @@ const letter: Variants = {
   },
 };
 
-export default function Body() {
+export default function Hero() {
   const part1 = "  ";
   const primaryTitle = "Jos TechFest";
   const alternateTitle = "AI Summit 2025";
@@ -37,7 +37,7 @@ export default function Body() {
       key: "techfest",
       titlePart1Color: "text-green-900",
       titlePart2Color: "text-green-700",
-      bgClass: "bg-white",
+      bgClass: "",
       paragraphText: "text-gray-700",
       buttonGradient: "from-green-300 to-green-900",
       subtleBadgeBg: "bg-white/20",
@@ -49,7 +49,7 @@ export default function Body() {
       key: "aisummit",
       titlePart1Color: "text-gray-100",
       titlePart2Color: "text-emerald-300",
-      bgClass: "bg-gradient-to-br from-gray-900 to-black",
+      bgClass: "",
       paragraphText: "text-gray-200",
       buttonGradient: "from-emerald-400 to-emerald-700",
       subtleBadgeBg: "bg-white/10",
@@ -60,8 +60,8 @@ export default function Body() {
   ] as const
 
   const theme = themes[showAlternate ? 1 : 0]
-  const bgPrimary = "/images/pic1.jpg"
-  const bgAlternate = "/images/pic12.jpg"
+  const bgPrimary = "https://www.nigeriagalleria.com/Nigeria/States_Nigeria/Plateau/Images/Riyom-Rock-Formations-Jos.jpg"
+  const bgAlternate = "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=2000&q=80"
   const currentBg = showAlternate ? bgAlternate : bgPrimary
 
   useEffect(() => {
@@ -70,25 +70,8 @@ export default function Body() {
   }, [])
   return (
     <>
+      <section className={`flex h-[100vh] w-full items-center justify-center px-6 text-center relative`}>
 
-      <section className={`flex min-h-screen items-center max-w-7xl mx-auto justify-center px-6 text-center relative ${theme.bgClass}`}>
-
-        {/* Background images crossfade */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentBg}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 3.5, ease: "easeInOut" }}
-            className="absolute inset-0 -z-10 bg-cover bg-center"
-            style={{ backgroundImage: `url(${currentBg})` }}
-          >
-            <div className="absolute inset-0 bg-black/40" />
-          </motion.div>
-        </AnimatePresence>
-
-     
         <div className="z-10 mx-auto max-w-5xl">
           <AnimatePresence mode="wait">
             <motion.div
@@ -164,7 +147,6 @@ export default function Body() {
             </motion.div>
           </AnimatePresence>
 
-          {/* flash overlay */}
           <motion.div
             key={`flash-${showAlternate ? 1 : 0}`}
             className="absolute inset-0 pointer-events-none"
@@ -173,30 +155,9 @@ export default function Body() {
             transition={{ duration: 3.0, ease: "easeInOut" }}
             style={{ background: theme.flashColor }}
           />
-
-          {/* <motion.h1
-            initial="hidden"
-            animate="visible"
-            variants={sentence}
-            className="mx-auto max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-green-900 sm:text-5xl md:text-6xl"
-          >
-            {text.split("").map((char, index) => (
-            <motion.span key={index} variants={letter}>
-            {char === " " ? "\u00A0" : char}
-            </motion.span>
-            ))}
-            Welcome to <span className="text-green-700">TechFest</span>
-          </motion.h1> */}
-
-
-          {/* <div className="mt-12 flex items-center justify-center gap-6 text-sm text-gray-600">
-            <div>June 12–14 • Lagos</div>
-            <div className="h-1 w-1 rounded-full bg-gray-400" />
-            <div>Hybrid • In-person & Online</div>
-          </div> */}
         </div>
 
-         <div className="absolute bottom-8 left-0 right-0 z-20 flex items-center justify-center text-xs text-gray-500 sm:hidden">
+        <div className="absolute bottom-8 left-0 right-0 z-20 flex items-center justify-center text-xs text-gray-500 sm:hidden">
           Swipe → to enter
         </div>
 
@@ -204,3 +165,5 @@ export default function Body() {
     </>
   )
 }
+
+
