@@ -37,7 +37,7 @@ export default function Hero() {
       key: "techfest",
       titlePart1Color: "text-green-900",
       titlePart2Color: "text-green-700",
-      bgClass: "",
+      bgClass: "bg-gradient-to-br from-emerald-50 to-green-200",
       paragraphText: "text-gray-700",
       buttonGradient: "from-green-300 to-green-900",
       subtleBadgeBg: "bg-white/20",
@@ -49,7 +49,7 @@ export default function Hero() {
       key: "aisummit",
       titlePart1Color: "text-gray-100",
       titlePart2Color: "text-emerald-300",
-      bgClass: "",
+      bgClass: "bg-gradient-to-br from-gray-900 to-black",
       paragraphText: "text-gray-200",
       buttonGradient: "from-emerald-400 to-emerald-700",
       subtleBadgeBg: "bg-white/10",
@@ -60,9 +60,6 @@ export default function Hero() {
   ] as const
 
   const theme = themes[showAlternate ? 1 : 0]
-  const bgPrimary = "https://www.nigeriagalleria.com/Nigeria/States_Nigeria/Plateau/Images/Riyom-Rock-Formations-Jos.jpg"
-  const bgAlternate = "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=2000&q=80"
-  const currentBg = showAlternate ? bgAlternate : bgPrimary
 
   useEffect(() => {
     const intervalId = setInterval(() => setShowAlternate(prev => !prev), 15000)
@@ -70,7 +67,19 @@ export default function Hero() {
   }, [])
   return (
     <>
-      <section className={`flex h-[100vh] w-full items-center justify-center px-6 text-center relative`}>
+      <section className={`flex h-[120vh] w-full items-center justify-center px-6 text-center relative overflow-hidden`}>
+
+        {/* Background gradient crossfade */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={theme.key}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 3.5, ease: "easeInOut" }}
+            className={`absolute inset-0 -z-10 ${theme.bgClass}`}
+          />
+        </AnimatePresence>
 
         <div className="z-10 mx-auto max-w-5xl">
           <AnimatePresence mode="wait">
