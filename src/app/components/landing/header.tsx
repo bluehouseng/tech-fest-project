@@ -43,9 +43,9 @@ export default function Header() {
       </div>
 
     
-      <div className="overflow-hidden bg-green-900 text-white h-8 sm:h-8 lg:h-12 flex items-center">
+      <div className="overflow-hidden bg-green-900 text-white h-8 sm:h-8 lg:h-12 flex items-center w-full">
         <motion.div
-          className="flex items-center gap-8 text-sm sm:text-sm lg:text-base font-medium w-[200%] sm:w-[150%] md:w-full {poppins.className}"
+          className="flex items-center gap-8 text-sm sm:text-sm lg:text-base font-medium w-full"
           animate={{ x: ["100%", "-100%"] }}
           transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
         >
