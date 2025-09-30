@@ -12,14 +12,14 @@ export default function Header() {
   return (
     <header className="inset-x-0 top-0 z-50 fixed">
       {/* Navbar */}
-      <div className="flex items-center justify-between px-6 py-4 bg-white">
+      <div className="flex items-center justify-between px-8  bg-white">
        
          <Link href="/" passHref>
       <Image
         src="/images/pic14.png"
         alt="Tech-fest Logo"
-        width={100}
-        height={100}
+        width={70}
+        height={70}
         className="cursor-pointer"
       />
     </Link>
