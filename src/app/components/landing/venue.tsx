@@ -12,7 +12,7 @@ export default function Venue() {
   return (
     <section id="venue" className="py-16">
       <div className="mx-auto max-w-6xl px-4">
-        <h2 className="text-3xl font-bold mb-4">Venue</h2>
+        <h2 className="text-4xl font-bold text-green-900 ">Venue</h2>
         <div className="flex items-start gap-3 text-gray-700 mb-6">
           <MapPin className="mt-1 h-5 w-5 text-red-600" />
           <div>
