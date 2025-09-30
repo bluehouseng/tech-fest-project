@@ -2,6 +2,97 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+const ImageSlider = ({ images, aspectRatio = "4/3" }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, images.length]);
+
+  const goToPrevious = () => {
+    setIsAutoPlaying(false);
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const goToNext = () => {
+    setIsAutoPlaying(false);
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const goToSlide = (index) => {
+    setIsAutoPlaying(false);
+    setCurrentIndex(index);
+  };
+
+  return (
+    <div className="relative group">
+      <div 
+        className="relative rounded-lg overflow-hidden shadow-xl"
+        style={{ aspectRatio }}
+      >
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <Image
+              src={image}
+              alt={`Slide ${index + 1}`}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority={index === 0}
+            />
+          </div>
+        ))}
+        
+        {/* Navigation Arrows */}
+        <button
+          onClick={goToPrevious}
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-slate-800 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+        
+        <button
+          onClick={goToNext}
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-slate-800 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="w-6 h-6" />
+        </button>
+      </div>
+
+      {/* Dot Indicators */}
+      <div className="flex justify-center gap-2 mt-4">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              index === currentIndex 
+                ? 'bg-emerald-600 w-8' 
+                : 'bg-slate-300 hover:bg-slate-400'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const StatsSection = () => {
   const stats = [
@@ -32,9 +123,21 @@ export default function AboutPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Hero Slider Images - Add your image paths here
+  const heroSliderImages = [
+    "/images/pic8.jpg",
+    "/images/pic9.webp",
+    "/images/pic10.webp",
+    "/images/pic11.webp"
+  ];
 
-  const heroImageSrc = "/images/pic8.jpg"; 
-  const aboutImageSrc = "/images/pic10.webp"; 
+  // About Section Slider Images - Add your image paths here
+  const aboutSliderImages = [
+    "/images/pic10.webp",
+    "/images/pic11.webp",
+    "/images/pic13.jpg",
+    "/images/pic12.jpg"
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -85,7 +188,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-           
+            {/* Hero Image Slider */}
             <div 
               className="relative"
               style={{
@@ -93,17 +196,9 @@ export default function AboutPage() {
                 transition: 'transform 0.1s ease-out'
               }}
             >
-              <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-xl relative">
-                <Image
-                  src={heroImageSrc}
-                  alt="JosTechFest conference scene"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
+              <ImageSlider images={heroSliderImages} aspectRatio="4/3" />
               
-        
+              {/* Decorative elements */}
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-emerald-100 rounded-full opacity-60"></div>
               <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-blue-100 rounded-full opacity-40"></div>
             </div>
@@ -111,22 +206,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-    
+      {/* About Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
           
-          
+            {/* About Image Slider */}
             <div className="relative">
-              <div className="aspect-square rounded-lg overflow-hidden shadow-xl relative">
-                <Image
-                  src={aboutImageSrc}
-                  alt="JosTechFest team or community"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
+              <ImageSlider images={aboutSliderImages} aspectRatio="1/1" />
             </div>
 
             <div className="space-y-8">
@@ -163,7 +250,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-     
+      {/* CTA Section */}
       <section className="py-20 bg-slate-50">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-slate-900 mb-6">
