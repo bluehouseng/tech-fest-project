@@ -15,6 +15,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
+});
+
 export const metadata: Metadata = {
    title: "TechFest 2025",
   description: "Innovation. Creativity. Networking.",
@@ -30,7 +36,7 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=star" />
       </head>
-      <body className="{poppins.className}">
+      <body className={`${poppins.className} overflow-x-hidden`} suppressHydrationWarning>
         <Header />
         <main className="pt-20">{children}</main>
         <Footer />

@@ -39,10 +39,10 @@ export default function KeynoteSpeakers() {
         </h5>
 
         {/* Responsive Grid for Speakers */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 -gap-95 gap-4  justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center w-full">
           {keynoteSpeakers.map((speaker) => (
-            <div key={speaker.name}>
-              <div className="relative w-72 h-96 rounded-md overflow-hidden shadow-2xl">
+            <div key={speaker.name} className="w-full max-w-[18rem]">
+              <div className="relative w-full h-96 rounded-md overflow-hidden shadow-2xl">
                 {/* Overlay with name + role */}
                 <div className="absolute top-0 left-0 w-full p-4 z-10 text-left">
                   <h3 className="text-lg font-semibold text-white">
