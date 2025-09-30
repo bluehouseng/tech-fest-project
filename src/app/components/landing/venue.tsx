@@ -5,6 +5,9 @@ export default function Venue() {
   const lng = 8.8583;
   const mapsUrl = `https://www.google.com/maps?q=${lat},${lng}`;
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+  // Adjust these to nudge the blinking marker relative to the map center (in pixels)
+  const offsetX = 0; // positive moves right, negative moves left
+  const offsetY = -12; // positive moves down, negative moves up
 
   return (
     <section id="venue" className="py-16">
@@ -40,6 +43,31 @@ export default function Venue() {
             referrerPolicy="no-referrer-when-downgrade"
             className="absolute left-0 top-0 h-full w-full"
           />
+          {/* Blinking marker overlay positioned relative to map center with adjustable offsets */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div
+              className="absolute"
+              style={{
+                left: "50%",
+                top: "50%",
+                transform: `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px))`,
+              }}
+            >
+              <span className="relative flex items-center justify-center">
+                <span className="absolute inline-flex h-6 w-6 rounded-full bg-red-500 opacity-75 animate-ping" />
+                <span className="relative inline-flex h-3 w-3 rounded-full bg-red-600 border-2 border-white shadow" />
+              </span>
+              {/* <div className="mt-2 ml-3 w-max rounded-md bg-white/95 backdrop-blur px-2 py-1 text-[11px] leading-tight text-gray-700 shadow pointer-events-auto">
+                Sarau Event Center (blink marks exact spot)
+              </div> */}
+            </div>
+          </div>
+        </div>
+
+        {/* Venue description */}
+        <div className="mt-4 text-sm text-gray-600">
+          {/* Sarau Event Center, Jos — a central venue easily accessible from major routes in Jos.
+          The blinking dot indicates the exact location on the map. */}
         </div>
       </div>
     </section>
