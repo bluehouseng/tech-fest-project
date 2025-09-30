@@ -12,7 +12,7 @@ export default function LandingPage() {
   return (
 	<main className="relative min-h-screen bg-[#fafaf9] overflow-hidden">
 
-            <div className="relative z-10">
+            <div className="relative z-10 ">
                 <Hero />
         <Host/>
         <Keyspeaker/>
