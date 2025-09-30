@@ -15,13 +15,11 @@ const sentence: Variants =  {
 };
 
 const letter: Variants = {
-  hidden: { opacity: 0, y: 8 },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    y: 0,
     transition: {
-      duration: 0.8,
-      ease: "easeInOut",
+      duration: 0.05,
     },
   },
 };
@@ -68,9 +66,9 @@ export default function Body() {
     const intervalId = setInterval(() => setShowAlternate(prev => !prev), 10000)
     return () => clearInterval(intervalId)
   }, [])
+
   return (
     <>
-
       <section className={`flex min-h-screen items-center max-w-7xl mx-auto justify-center px-6 text-center relative ${theme.bgClass}`}>
 
         {/* Background images crossfade */}
@@ -99,29 +97,29 @@ export default function Body() {
               transition={{ duration: 3.5, ease: "easeInOut" }}
             >
               <motion.h1
-                initial="hidden"
-                animate="visible"
-                variants={sentence}
                 className="mx-auto max-w-3xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl"
+                variants={sentence}
+                initial="hidden"
+                animate="visible"   
               >
-                {part1.split("").map((char, index) => (
+                {"Welcome to".split("").map((char: string, index: number) => (
                   <motion.span
                     key={`p1-${index}`}
-                    variants={letter}
-                    className={theme.titlePart1Color}
+                    variants={sentence}
+                    className="text-gray-500"
                   >
                     {char === " " ? "\u00A0" : char}
                   </motion.span>
                 ))}
 
-                {(showAlternate ? alternateTitle : primaryTitle).split("").map((char, index) => (
-                  <motion.span
-                    key={`p2-${index}`}
-                    variants={letter}
-                    className={theme.titlePart2Color}
-                  >
-                    {char}
-                  </motion.span>
+                {"TechFest".split("").map((char, index) => (
+                <motion.span
+                  key={`p2-${index}`}
+                  variants={letter}
+                  className="text-green-700" 
+                >
+                  {char}
+                </motion.span>
                 ))}
               </motion.h1>
 
@@ -173,20 +171,6 @@ export default function Body() {
             transition={{ duration: 3.0, ease: "easeInOut" }}
             style={{ background: theme.flashColor }}
           />
-
-          <motion.h1
-            initial="hidden"
-            animate="visible"
-            variants={sentence}
-            className="mx-auto max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-green-900 sm:text-5xl md:text-6xl"
-          >
-            {"Welcome to ".split("").map((char: string, index: number) => (
-            <motion.span key={index} variants={letter}>
-            {char === " " ? "\u00A0" : char}
-            </motion.span>
-            ))}
-            <span className="text-green-700">TechFest</span>
-          </motion.h1> 
         </div>
 
          <div className="absolute bottom-8 left-0 right-0 z-20 flex items-center justify-center text-xs text-gray-500 sm:hidden">
