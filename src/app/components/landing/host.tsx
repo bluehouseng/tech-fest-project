@@ -69,10 +69,11 @@ export default function Host() {
         </motion.h5>
 
         {/* Overlapping rotated cards */}
-        <div className="relative flex flex-col items-center justify-center h-[420px] md:flex-row gap-4">
+        <div className="flex flex-col items-center gap-4  md:relative md:h-[420px] md:flex-row md:justify-center">
+
           {/* First Card */}
           <motion.div
-            className="absolute -rotate-16 left-1/4 z-10"
+            className="md:absolute md:-rotate-16 md:left-1/4 md:z-10"
             whileHover={{ scale: 1.05, rotate: -10 }}
             initial={{ opacity: 0, x: -200 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -83,8 +84,8 @@ export default function Host() {
 
           {/* Second Card */}
           <motion.div
-            className="absolute rotate-16 right-1/4 z-40"
-            whileHover={{ scale: 1.05, rotate:10 }}
+            className="md:absolute md:rotate-16 md:right-1/4 md:z-40"
+            whileHover={{ scale: 1.05, rotate: 10 }}
             initial={{ opacity: 0, x: 200 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.8, ease: "easeOut", delay: 0.3 }}

@@ -65,7 +65,7 @@ export default function Body() {
   const currentBg = showAlternate ? bgAlternate : bgPrimary
 
   useEffect(() => {
-    const intervalId = setInterval(() => setShowAlternate(prev => !prev), 15000)
+    const intervalId = setInterval(() => setShowAlternate(prev => !prev), 10000)
     return () => clearInterval(intervalId)
   }, [])
   return (
@@ -174,26 +174,19 @@ export default function Body() {
             style={{ background: theme.flashColor }}
           />
 
-          {/* <motion.h1
+          <motion.h1
             initial="hidden"
             animate="visible"
             variants={sentence}
             className="mx-auto max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-green-900 sm:text-5xl md:text-6xl"
           >
-            {text.split("").map((char, index) => (
+            {"Welcome to ".split("").map((char: string, index: number) => (
             <motion.span key={index} variants={letter}>
             {char === " " ? "\u00A0" : char}
             </motion.span>
             ))}
-            Welcome to <span className="text-green-700">TechFest</span>
-          </motion.h1> */}
-
-
-          {/* <div className="mt-12 flex items-center justify-center gap-6 text-sm text-gray-600">
-            <div>June 12–14 • Lagos</div>
-            <div className="h-1 w-1 rounded-full bg-gray-400" />
-            <div>Hybrid • In-person & Online</div>
-          </div> */}
+            <span className="text-green-700">TechFest</span>
+          </motion.h1> 
         </div>
 
          <div className="absolute bottom-8 left-0 right-0 z-20 flex items-center justify-center text-xs text-gray-500 sm:hidden">
