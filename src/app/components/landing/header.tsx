@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 
 export default function Header() {
@@ -12,10 +13,17 @@ export default function Header() {
     <header className="inset-x-0 top-0 z-50 fixed">
       {/* Navbar */}
       <div className="flex items-center justify-between px-6 py-4 bg-white">
-        <Link className="text-lg font-semibold text-green-800" href="/">
-          TechFest
-        </Link>
-
+       
+         <Link href="/" passHref>
+      <Image
+        src="/images/pic14.png"
+        alt="Tech-fest Logo"
+        width={100}
+        height={100}
+        className="cursor-pointer"
+      />
+    </Link>
+          
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6 text-sm text-white-700 h-10">
           <Link href="/" className="hover:text-amber-500">Home</Link>
@@ -74,10 +82,7 @@ export default function Header() {
           <span className="material-symbols-outlined center">
           star
           </span>
-
-          <p> #TechFestJos
-
-          </p>
+          <p>#JosTechFest</p>
         </motion.div>
       </div>
 
