@@ -14,15 +14,15 @@ export default function Header() {
       {/* Navbar */}
       <div className="flex items-center justify-between px-8  bg-white">
        
-         <Link href="/" passHref>
-      <Image
-        src="/images/pic14.png"
-        alt="Tech-fest Logo"
-        width={70}
-        height={70}
-        className="cursor-pointer"
-      />
-    </Link>
+      <Link href="/" passHref>
+        <Image
+          src="/images/pic14.png"
+          alt="Tech-fest Logo"
+          width={70}
+          height={70}
+          className="cursor-pointer"
+        />
+      </Link>
           
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6 text-sm text-white-700 h-10">
@@ -36,7 +36,8 @@ export default function Header() {
         {/* Desktop button */}
         <Link
           href="/register"
-          className="hidden md:inline-block rounded-full border bg-gradient-to-tl from-green-300 to-green-900 cursor-pointer px-4 py-2 text-sm font-medium text-white shadow-sm"
+          className="hidden md:inline-block border-green-700 border-1 rounded-full px-4 py-1 font-xs hover:bg-green-700 hover:text-white transition"
+          // className="hidden md:inline-block rounded-full border bg-gradient-to-tl from-green-300 to-green-900 cursor-pointer px-4 py-2 text-sm font-medium text-white shadow-sm"
         >
           Register Now
         </Link>
@@ -50,12 +51,12 @@ export default function Header() {
         </button>
       </div>
 
-    
-      <div className="overflow-hidden bg-green-900 text-white h-8 sm:h-8 lg:h-12 flex items-center w-full">
+
+      <div className="overflow-hidden bg-gradient-to-b from-green-700 to-green-300 text-white h-8 sm:h-8 lg:h-12 flex items-center w-full">
         <motion.div
           className="flex items-center gap-8 text-sm sm:text-sm lg:text-base font-medium w-full"
           animate={{ x: ["100%", "-100%"] }}
-          transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+          transition={{ repeat: Infinity, duration: 70, ease: "linear" }}
         >
         
           <p className="whitespace-nowrap"> Welcome to TechFest 2025</p>
@@ -96,7 +97,8 @@ export default function Header() {
           <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
           <Link
             href="/register"
-            className="bg-gradient-to-tl from-green-300 to-green-900 px-10 py-2 rounded-full text-white cursor-pointer shadow-sm"
+            className="border-green-700 border-1 rounded-full px-4 py-1/2 font-xs hover:bg-green-700 hover:text-white transition"
+            // className="bg-gradient-to-tl from-green-300 to-green-900 px-10 py-2 rounded-full text-white cursor-pointer shadow-sm"
             onClick={() => setOpen(false)}
           >
             Register Now
