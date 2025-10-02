@@ -72,18 +72,15 @@ export default function Hero() {
             >
               <motion.h1
                 className="mx-auto max-w-3xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl"
-              >
-                 <span className="text-gray-500">
-            {/* Welcome to{" "} */}
-          </span>
+            >
           <span className="text-green-700">
             <Typewriter
-              words={['Welcome to TechFest']}
-              loop={true}          
+              words={[showAlternate ? "AI summit 2025" : "Jos TechFest"]}
+              loop={false}          
               cursor
               cursorStyle="|"
-              typeSpeed={80}        
-              deleteSpeed={50}     
+              typeSpeed={350}        
+              deleteSpeed={150}     
               delaySpeed={2000}     
             />
           </span>

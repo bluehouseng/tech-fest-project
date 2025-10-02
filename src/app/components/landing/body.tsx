@@ -80,11 +80,11 @@ export default function Body() {
                 className="mx-auto max-w-3xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl" 
               >
                 <span className="text-gray-500">
-                 Welcome to{" "}
+                 Jos TechFest
                 </span>
               <span className="text-green-700">
                 <Typewriter
-                  words={['TechFest', 'AI Summit 2025']}
+                  words={['Jos TechFest', 'AI Summit 2025']}
                   loop={true}      
                   cursor
                   cursorStyle="|"
