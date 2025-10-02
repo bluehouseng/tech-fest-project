@@ -27,8 +27,7 @@ const hosts: Host[] = [
 function Card({ host }: { host: Host }) {
   return (
     <div className="relative w-72 h-[400px] bg-white rounded-md overflow-hidden shadow-xl">
-
-      <div className="absolute top-0 left-0 w-full  bg-opacity-90 p-4 z-10 text-left">
+    <div className="absolute top-0 left-0 w-full  bg-opacity-90 p-4 z-10 text-left">
         <h3 className="text-lg font-semibold text-white">{host.name}</h3>
         <p className="text-sm text-gray-300">{host.role}</p>
       </div>
