@@ -1,33 +1,13 @@
 "use client"
-import { useEffect, useState } from "react"
-import { motion, Variants, AnimatePresence } from "framer-motion"
-import Link from "next/link"
-
-const sentence: Variants =  {
-  hidden: { opacity: 1 },
-  visible: {
-    opacity: 1,
-    transition: {
-      delayChildren: 0.2,
-      staggerChildren: 0.08, // delay between each letter
-    },
-  },
-};
-
-const letter: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.05,
-    },
-  },
-};
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import {Typewriter} from "react-simple-typewriter";
 
 export default function Body() {
-  const part1 = "  ";
-  const primaryTitle = "Jos TechFest";
-  const alternateTitle = "AI Summit 2025";
+  // const part1 = "  ";
+  // const primaryTitle = "Jos TechFest";
+  // const alternateTitle = "AI Summit 2025";
   const [showAlternate, setShowAlternate] = useState(false)
 
   const themes = [
@@ -69,7 +49,7 @@ export default function Body() {
 
   return (
     <>
-      <section className={`flex min-h-screen items-center max-w-7xl mx-auto justify-center px-6 text-center relative ${theme.bgClass}`}>
+      <section className={`flex  items-start pt-20 min-h-screen max-w-7xl mx-auto justify-center px-6 text-center relative ${theme.bgClass}`}>
 
         {/* Background images crossfade */}
         <AnimatePresence mode="wait">
@@ -88,40 +68,32 @@ export default function Body() {
 
      
         <div className="z-10 mx-auto max-w-5xl">
-          <AnimatePresence mode="wait">
+          {/* <AnimatePresence mode="wait">
             <motion.div
               key={showAlternate ? "alt" : "primary"}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 3.5, ease: "easeInOut" }}
-            >
-              <motion.h1
-                className="mx-auto max-w-3xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl"
-                variants={sentence}
-                initial="hidden"
-                animate="visible"   
+            > */}
+              <h1
+                className="mx-auto max-w-3xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl" 
               >
-                {"Welcome to".split("").map((char: string, index: number) => (
-                  <motion.span
-                    key={`p1-${index}`}
-                    variants={sentence}
-                    className="text-gray-500"
-                  >
-                    {char === " " ? "\u00A0" : char}
-                  </motion.span>
-                ))}
-
-                {"TechFest".split("").map((char, index) => (
-                <motion.span
-                  key={`p2-${index}`}
-                  variants={letter}
-                  className="text-green-700" 
-                >
-                  {char}
-                </motion.span>
-                ))}
-              </motion.h1>
+                <span className="text-gray-500">
+                 Welcome to{" "}
+                </span>
+              <span className="text-green-700">
+                <Typewriter
+                  words={['TechFest', 'AI Summit 2025']}
+                  loop={true}      
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={80}         
+                  deleteSpeed={50}       
+                  delaySpeed={2000}     
+                   />
+                </span>
+              </h1>
 
               <motion.p
                 initial={{ y: 20, opacity: 0 }}
@@ -141,7 +113,8 @@ export default function Body() {
                   className={`group relative inline-flex items-center overflow-hidden rounded-full bg-gradient-to-tl ${theme.buttonGradient} px-10 py-2 cursor-pointer shadow-md`}
                   onClick={() => (window.location.href = "/home")}
                 >
-                  <p className="text-sm font-semibold text-white ">{showAlternate ? "Explore AI" : "Slide to enter"}</p>
+                  <p className="text-sm font-semibold text-white ">{showAlternate ? "Explore AI" : "Slide to enter"}
+                  </p>
                   <span className={`inline-block ml-2 rounded-full ${theme.subtleBadgeBg} px-3 py-1 text-xs font-medium`}>
                     →
                   </span>
@@ -159,8 +132,8 @@ export default function Body() {
                   Learn more
                 </Link>
               </div>
-            </motion.div>
-          </AnimatePresence>
+            {/* </motion.div>
+          </AnimatePresence> */}
 
           {/* flash overlay */}
           <motion.div
