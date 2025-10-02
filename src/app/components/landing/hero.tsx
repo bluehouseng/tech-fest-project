@@ -79,8 +79,8 @@ export default function Hero() {
               loop={false}          
               cursor
               cursorStyle="|"
-              typeSpeed={350}        
-              deleteSpeed={150}     
+              typeSpeed={140}        
+              deleteSpeed={100}     
               delaySpeed={2000}     
             />
           </span>
