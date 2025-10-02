@@ -10,7 +10,7 @@ const ContactPage = () => {
     description: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [focusedField, setFocusedField] = useState(null);
+  const [focusedField, setFocusedField] = useState<"name" | "email" | "description" | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showRegistrationForm, setShowRegistrationForm] = useState(false);
   const [registrationData, setRegistrationData] = useState({
@@ -55,28 +55,28 @@ const ContactPage = () => {
     }
   ];
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleRegistrationChange = (e) => {
-    const { name, value, type, checked } = e.target;
+  const handleRegistrationChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value, type } = e.target;
     setRegistrationData({
       ...registrationData,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 3000);
   };
 
-  const handleRegistrationSubmit = (e) => {
+  const handleRegistrationSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('Registration Data:', registrationData);
   
@@ -265,32 +265,33 @@ const ContactPage = () => {
                 </div>
 
          
-                <div className="relative">
-                  <button
-                    type="submit"
-                    onClick={handleSubmit}
-                    disabled={isSubmitted}
-                    className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-[1.02] focus:scale-[1.02] shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-green-200 ${
-                      isSubmitted
-                        ? 'bg-green-600 text-white cursor-not-allowed'
-                        : 'bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white active:scale-[0.98]'
-                    }`}
-                  >
-                    <div className="flex items-center justify-center space-x-2">
-                      {isSubmitted ? (
-                        <>
-                          <CheckCircle className="w-5 h-5 animate-pulse" />
-                          <span>Message Sent!</span>
-                        </>
-                      ) : (
-                        <>
-                          <span>Send message</span>
-                          <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                        </>
-                      )}
-                    </div>
-                  </button>
-                </div>
+                <form onSubmit={handleSubmit}>
+                  <div className="relative">
+                    <button
+                      type="submit"
+                      disabled={isSubmitted}
+                      className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-[1.02] focus:scale-[1.02] shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-green-200 ${
+                        isSubmitted
+                          ? 'bg-green-600 text-white cursor-not-allowed'
+                          : 'bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white active:scale-[0.98]'
+                      }`}
+                    >
+                      <div className="flex items-center justify-center space-x-2">
+                        {isSubmitted ? (
+                          <>
+                            <CheckCircle className="w-5 h-5 animate-pulse" />
+                            <span>Message Sent!</span>
+                          </>
+                        ) : (
+                          <>
+                            <span>Send message</span>
+                            <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                          </>
+                        )}
+                      </div>
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
 
@@ -506,13 +507,14 @@ const ContactPage = () => {
                 </div>
 
              
-                <button
-                  type="button"
-                  onClick={handleRegistrationSubmit}
-                  className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
-                >
-                  Submit
-                </button>
+                <form onSubmit={handleRegistrationSubmit}>
+                  <button
+                    type="submit"
+                    className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
+                  >
+                    Submit
+                  </button>
+                </form>
               </div>
             </div>
           </div>
