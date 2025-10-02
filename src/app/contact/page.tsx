@@ -119,10 +119,10 @@ const ContactPage = () => {
         </div>
 
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           
           <div className="relative">
-            <div className="relative h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative h-96 lg:h-full rounded-3xl overflow-hidden shadow-2xl">
              
               <div className="relative w-full h-full">
                 {sliderImages.map((image, index) => (
@@ -180,8 +180,8 @@ const ContactPage = () => {
 
        
           <div className="relative">
-            <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-white/20 transform transition-all duration-700 hover:shadow-3xl">
-              <div className="space-y-6">
+            <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-white/20 transform transition-all duration-700 hover:shadow-3xl h-full flex flex-col">
+              <div className="space-y-6 flex-1 flex flex-col">
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                
@@ -229,11 +229,11 @@ const ContactPage = () => {
                   </div>
                 </div>
 
-                <div className="relative group">
+                <div className="relative group flex-1">
                   <label className="block text-sm font-semibold text-slate-700 mb-2 transition-colors duration-300 group-focus-within:text-blue-600">
                     Description
                   </label>
-                  <div className="relative">
+                  <div className="relative h-full">
                     <MessageSquare className={`absolute left-3 top-4 w-4 h-4 transition-all duration-300 ${
                       focusedField === 'description' ? 'text-blue-500 scale-110' : 'text-slate-400'
                     }`} />
@@ -243,9 +243,9 @@ const ContactPage = () => {
                       onChange={handleInputChange}
                       onFocus={() => setFocusedField('description')}
                       onBlur={() => setFocusedField(null)}
-                      rows={4}
+                      rows={6}
                       placeholder="Include as much details as you can"
-                      className="w-full pl-10 pr-4 py-3 bg-white border-2 border-slate-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-300 placeholder-slate-400 text-slate-800 resize-none shadow-sm hover:border-slate-300 hover:shadow-md text-sm"
+                      className="w-full h-full pl-10 pr-4 py-3 bg-white border-2 border-slate-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-300 placeholder-slate-400 text-slate-800 resize-none shadow-sm hover:border-slate-300 hover:shadow-md text-sm"
                     />
                   </div>
                 </div>
@@ -314,7 +314,7 @@ const ContactPage = () => {
           <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
             <div className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
              
-              <div className="bg-gradient-to-r from-slate-100 to-green-50 p-8 rounded-t-3xl text-center">
+              <div className="bg-gradient-to-r from-slate-100 to-green-50 p-8 rounded-t-3xl text-center relative">
                 <h2 className="text-3xl font-bold text-slate-800 mb-2">Register for JosTechFest 2024</h2>
                 <p className="text-slate-600">Join us at JosTechFest. Complete the form to secure your spot.</p>
                 <button
@@ -326,7 +326,7 @@ const ContactPage = () => {
               </div>
 
    
-              <form onSubmit={handleRegistrationSubmit} className="p-8 space-y-6">
+              <div className="p-8 space-y-6">
           
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
@@ -340,7 +340,6 @@ const ContactPage = () => {
                       onChange={handleRegistrationChange}
                       placeholder="First name"
                       className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
-                      required
                     />
                   </div>
                   <div>
@@ -354,7 +353,6 @@ const ContactPage = () => {
                       onChange={handleRegistrationChange}
                       placeholder="Your surname"
                       className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
-                      required
                     />
                   </div>
                 </div>
@@ -371,7 +369,6 @@ const ContactPage = () => {
                     onChange={handleRegistrationChange}
                     placeholder="you@company.com"
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
-                    required
                   />
                 </div>
 
@@ -387,7 +384,6 @@ const ContactPage = () => {
                     onChange={handleRegistrationChange}
                     placeholder="NGN+234 (900) 000-0000"
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
-                    required
                   />
                 </div>
 
@@ -400,7 +396,6 @@ const ContactPage = () => {
                     value={registrationData.state}
                     onChange={handleRegistrationChange}
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors bg-white"
-                    required
                   >
                     <option value="">Enter your State</option>
                     <option value="plateau">Plateau</option>
@@ -422,7 +417,6 @@ const ContactPage = () => {
                     value={registrationData.intoTech}
                     onChange={handleRegistrationChange}
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors bg-white"
-                    required
                   >
                     <option value="">Select an option</option>
                     <option value="yes">Yes</option>
@@ -441,7 +435,6 @@ const ContactPage = () => {
                     value={registrationData.fieldOfInterest}
                     onChange={handleRegistrationChange}
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors bg-white"
-                    required
                   >
                     <option value="">Select a Tech field of interest</option>
                     <option value="web-development">Web Development</option>
@@ -455,7 +448,7 @@ const ContactPage = () => {
                   </select>
                 </div>
 
-                {/* Gender */}
+                
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
                     Gender <span className="text-red-500">*</span>
@@ -465,7 +458,6 @@ const ContactPage = () => {
                     value={registrationData.gender}
                     onChange={handleRegistrationChange}
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors bg-white"
-                    required
                   >
                     <option value="">Select your gender</option>
                     <option value="male">Male</option>
@@ -484,7 +476,6 @@ const ContactPage = () => {
                     value={registrationData.howDidYouHear}
                     onChange={handleRegistrationChange}
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors bg-white"
-                    required
                   >
                     <option value="">Select an option</option>
                     <option value="social-media">Social Media</option>
@@ -504,7 +495,6 @@ const ContactPage = () => {
                     checked={registrationData.agreeToPrivacy}
                     onChange={handleRegistrationChange}
                     className="mt-1 w-4 h-4 text-green-600 border-slate-300 rounded focus:ring-green-500"
-                    required
                   />
                   <label className="text-sm text-slate-600">
                     You agree to our friendly{' '}
@@ -517,12 +507,13 @@ const ContactPage = () => {
 
              
                 <button
-                  type="submit"
+                  type="button"
+                  onClick={handleRegistrationSubmit}
                   className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
                 >
                   Submit
                 </button>
-              </form>
+              </div>
             </div>
           </div>
         )}
