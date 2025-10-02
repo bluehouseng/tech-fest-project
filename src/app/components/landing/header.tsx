@@ -75,9 +75,7 @@ export default function Header() {
           star
           </span>
 
-          <p> #TechFestJos
-
-          </p>
+          <p> #TechFestJos</p>
         </motion.div>
       </div>
 

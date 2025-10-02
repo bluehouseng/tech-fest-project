@@ -2,29 +2,9 @@
 import { useEffect, useState } from "react"
 import { motion, Variants, AnimatePresence } from "framer-motion"
 import Link from "next/link"
+import {Typewriter} from "react-simple-typewriter";
 
-const sentence: Variants =  {
-  hidden: { opacity: 1 },
-  visible: {
-    opacity: 1,
-    transition: {
-      delayChildren: 0.2,
-      staggerChildren: 0.08,
-    },
-  },
-};
-
-const letter: Variants = {
-  hidden: { opacity: 0, y: 8 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeInOut",
-    },
-  },
-};
+ 
 
 export default function Hero() {
   const part1 = "  ";
@@ -91,30 +71,22 @@ export default function Hero() {
               transition={{ duration: 3.5, ease: "easeInOut" }}
             >
               <motion.h1
-                initial="hidden"
-                animate="visible"
-                variants={sentence}
                 className="mx-auto max-w-3xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl"
               >
-                {part1.split("").map((char, index) => (
-                  <motion.span
-                    key={`p1-${index}`}
-                    variants={letter}
-                    className={theme.titlePart1Color}
-                  >
-                    {char === " " ? "\u00A0" : char}
-                  </motion.span>
-                ))}
-
-                {(showAlternate ? alternateTitle : primaryTitle).split("").map((char, index) => (
-                  <motion.span
-                    key={`p2-${index}`}
-                    variants={letter}
-                    className={theme.titlePart2Color}
-                  >
-                    {char}
-                  </motion.span>
-                ))}
+                 <span className="text-gray-500">
+            {/* Welcome to{" "} */}
+          </span>
+          <span className="text-green-700">
+            <Typewriter
+              words={['Welcome to TechFest']}
+              loop={true}          
+              cursor
+              cursorStyle="|"
+              typeSpeed={80}        
+              deleteSpeed={50}     
+              delaySpeed={2000}     
+            />
+          </span>
               </motion.h1>
 
               <motion.p
