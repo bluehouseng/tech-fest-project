@@ -80,7 +80,7 @@ export default function Hero() {
               cursor
               cursorStyle="|"
               typeSpeed={350}        
-              deleteSpeed={150}     
+              deleteSpeed={50}     
               delaySpeed={2000}     
             />
           </span>
