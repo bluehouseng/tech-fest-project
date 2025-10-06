@@ -95,7 +95,7 @@ export default function Speakers() {
         >
           Meet Our Speakers
         </motion.h2>
-        <p className="mt-4 text-gray-600 mb-12">
+        <p className="mt-4 text-gray-600 mb-12 font-semibold">
           Visionaries, innovators, and leaders shaping the future of technology.
         </p>
 

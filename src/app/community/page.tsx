@@ -66,10 +66,10 @@ const Page = () => {
   return (
     <div className="p-4 sm:p-8 md:p-12 lg:p-16">
       <div className="flex flex-col justify-center items-center">
-        <h1 className="text-center font-bold text-xl sm:text-2xl md:text-3xl mb-4">
+        <h1 className="text-center text-green-900 font-bold text-xl sm:text-2xl md:text-3xl mb-4">
           Our Community
         </h1>
-        <p className="text-center text-sm sm:text-base md:text-lg px-4 sm:px-8 md:px-16 lg:px-25">
+        <p className="text-center text-gray-600 text-sm sm:text-base md:text-lg px-4 sm:px-8 md:px-16 lg:px-25 font-semibold">
           Jos Tech Fest is more than a gathering—it's a dedicated community
           working to strengthen Plateau State's tech ecosystem. We unite tech
           hubs, innovators, and enthusiasts in a shared mission to elevate our

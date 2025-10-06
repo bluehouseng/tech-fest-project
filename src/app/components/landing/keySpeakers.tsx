@@ -33,8 +33,8 @@ export default function KeynoteSpeakers() {
     <section className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Section Title */}
-        <h2 className="text-4xl font-bold text-black mb-5">Keynote Speakers</h2>
-        <h5 className="text-gray-600 mb-12">
+        <h2 className="text-4xl font-bold text-green-900 mb-5">Keynote Speakers</h2>
+        <h5 className="text-gray-600 mb-12  font-semibold">
           Visionary leaders sharing ideas that will shape the future of technology
         </h5>
 
