@@ -53,7 +53,7 @@ export default function Host() {
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.9 }}
-          className="text-4xl font-bold text-black mb-4"
+          className="text-4xl font-bold text-green-900 mb-4"
         >
          Our Hosts
         </motion.h2>
@@ -62,9 +62,9 @@ export default function Host() {
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: 10, opacity: 1 }}
           transition={{ delay: 0.1, duration: 0.5 }}
-          className="text-gray-600 mb-12"
+          className="text-gray-600 mb-20  font-semibold  "
         >
-            Guiding the flow of TechFest with energy, insight, and passion
+            Guiding the flow of TechFest with  energy, insight, and passion
         </motion.h5>
 
         {/* Overlapping rotated cards */}

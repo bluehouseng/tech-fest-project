@@ -37,7 +37,7 @@ export default function Agenda() {
         >
           Agenda
         </motion.h2>
-        <p className="mt-3 text-center text-gray-600">
+        <p className="mt-3 text-center text-gray-600 font-semibold">
           2 days of innovation, collaboration, and unforgettable experiences.
         </p>
 
