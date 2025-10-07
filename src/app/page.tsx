@@ -8,6 +8,7 @@ import Partners from "./components/landing/partners";
 import Host from "./components/landing/host";
 import Keyspeaker from "./components/landing/keySpeakers";
 import Venue from "./components/landing/venue";
+import Body from "./components/landing/body";
 
 export default function LandingPage() {
   return (
