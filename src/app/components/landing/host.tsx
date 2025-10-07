@@ -47,7 +47,7 @@ function Card({ host }: { host: Host }) {
 
 export default function Host() {
   return (
-    <section className="py-20 bg-white -mt-26">
+    <section className="py-20 bg-white ">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <motion.h2
           initial={{ y: 50, opacity: 0 }}
