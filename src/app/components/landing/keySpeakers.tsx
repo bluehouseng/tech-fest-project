@@ -1,3 +1,5 @@
+
+
 // components/KeynoteSpeakers.tsx
 "use client";
 
@@ -33,16 +35,40 @@ export default function KeynoteSpeakers() {
     <section className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Section Title */}
-        <h2 className="text-4xl font-bold text-green-900 mb-5">Keynote Speakers</h2>
-        <h5 className="text-gray-600 mb-12  font-semibold">
+        <motion.h2
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.9 }}
+          className="text-4xl font-bold text-green-900 mb-4"
+        >
+          Keynote Speakers
+        </motion.h2>
+
+        {/* Subtitle */}
+        <motion.h5
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.9, delay: 0.1 }}
+          className="text-gray-600 mb-12 font-semibold"
+        >
           Visionary leaders sharing ideas that will shape the future of technology
-        </h5>
+        </motion.h5>
 
         {/* Responsive Grid for Speakers */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center w-full">
-          {keynoteSpeakers.map((speaker) => (
-            <div key={speaker.name} className="w-full max-w-[18rem]">
-              <div className="relative w-full h-96 rounded-md overflow-hidden shadow-2xl">
+          {keynoteSpeakers.map((speaker, index) => (
+            <motion.div
+              key={speaker.name}
+              initial={{ y: 60, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: index * 0.15 }}
+              className="w-full max-w-[18rem]"
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }} // 👈 Slow hover effect added
+                className="relative w-full h-96 rounded-md overflow-hidden shadow-2xl"
+              >
                 {/* Overlay with name + role */}
                 <div className="absolute top-0 left-0 w-full p-4 z-10 text-left">
                   <h3 className="text-lg font-semibold text-white">
@@ -59,8 +85,8 @@ export default function KeynoteSpeakers() {
                   height={500}
                   className="object-cover w-full h-full"
                 />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
 
