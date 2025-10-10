@@ -39,7 +39,7 @@ const ContactPage = () => {
       title: "Expert Team"
     },
     {
-      src: "/images/pic10.webp",
+      src: "/images/jtf-3.jpg",
       alt: "Digital innovation",
       title: "Innovation First"
     },

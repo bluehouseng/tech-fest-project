@@ -61,27 +61,27 @@ export default function Header() {
         
           <p className="whitespace-nowrap"> Welcome to TechFest 2025</p>
           <span className="material-symbols-outlined center">
-          star
+          |
           </span>
 
           <p>Innovation</p>
           <span className="material-symbols-outlined center">
-          star
+          |
           </span>
 
           <p>Creativity</p>
           <span className="material-symbols-outlined center">
-          star
+          |
           </span>
 
           <p>Networking</p>
            <span className="material-symbols-outlined center">
-          star
+          |
           </span>
 
           <p className="whitespace-nowrap">World-class Speakers</p>
           <span className="material-symbols-outlined center">
-          star
+          |
           </span>
           <p>#JosTechFest</p>
         </motion.div>
