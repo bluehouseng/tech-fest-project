@@ -52,7 +52,7 @@ export default function Header() {
       </div>
 
 
-      <div className="overflow-hidden bg-gradient-to-b from-green-700 to-green-300 text-white h-8 sm:h-8 lg:h-12 flex items-center w-full">
+      <div className="overflow-hidden bg-green-900 text-white h-8 sm:h-8 lg:h-12 flex items-center w-full">
         <motion.div
           className="flex items-center gap-8 text-sm sm:text-sm lg:text-base font-medium w-full"
           animate={{ x: ["100%", "-100%"] }}
@@ -60,27 +60,27 @@ export default function Header() {
         >
         
           <p className="whitespace-nowrap"> Welcome to TechFest 2025</p>
-          <span className="material-symbols-outlined center">
+          <span className="center">
           |
           </span>
 
           <p>Innovation</p>
-          <span className="material-symbols-outlined center">
+          <span className=" center">
           |
           </span>
 
           <p>Creativity</p>
-          <span className="material-symbols-outlined center">
+          <span className="center">
           |
           </span>
 
           <p>Networking</p>
-           <span className="material-symbols-outlined center">
+           <span className="center">
           |
           </span>
 
           <p className="whitespace-nowrap">World-class Speakers</p>
-          <span className="material-symbols-outlined center">
+          <span className=" center">
           |
           </span>
           <p>#JosTechFest</p>
