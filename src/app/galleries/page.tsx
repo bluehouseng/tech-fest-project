@@ -88,14 +88,14 @@ export default function galleries() {
         </div>
 
         {/* Button */}
-        <div className="mt-12">
+        {/* <div className="mt-12">
           <motion.button
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             className="group relative inline-flex items-center overflow-hidden rounded-full bg-gradient-to-tl from-green-300 to-green-900 px-10 py-2 cursor-pointer shadow-md"
             onClick={() => (window.location.href = "/speakers")}
           >
-            <p className="text-white">Meet our speakers</p>
+            <p className="text-white">See More`</p>
             <span className="inline-block ml-2 rounded-full bg-white/20 px-3 py-1 text-xs font-medium">
               →
             </span>
@@ -105,7 +105,7 @@ export default function galleries() {
               transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
             />
           </motion.button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
