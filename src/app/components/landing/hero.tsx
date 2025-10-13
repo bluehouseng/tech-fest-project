@@ -33,7 +33,7 @@ const heroImages = [
   // "/images/jtf-18.jpg",
   // "/images/jtf-36.jpg",
   // "/images/jtf-3.jpg",
-  // "/images/jtf-2.jpg",
+  
 ];
 
 
