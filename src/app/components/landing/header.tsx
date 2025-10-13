@@ -55,8 +55,8 @@ export default function Header() {
       <div className="overflow-hidden bg-green-900 text-white h-8 sm:h-8 lg:h-12 flex items-center w-full">
         <motion.div
           className="flex items-center gap-8 text-sm sm:text-sm lg:text-base font-medium w-full"
-          animate={{ x: ["100%", "-100%"] }}
-          transition={{ repeat: Infinity, duration: 70, ease: "linear" }}
+         animate={{ x: ["0%", "-100%"] }}
+              transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
         >
         
           <p className="whitespace-nowrap"> Welcome to TechFest 2025</p>
@@ -75,7 +75,7 @@ export default function Header() {
           </span>
 
           <p>Networking</p>
-           <span className="center">
+           <span className=" center">
           |
           </span>
 
@@ -84,6 +84,46 @@ export default function Header() {
           |
           </span>
           <p>#JosTechFest</p>
+          <span className="center">
+            |
+          </span>
+
+          
+
+
+           <p className="whitespace-nowrap"> Welcome to TechFest 2025</p>
+          <span className="center">
+          |
+          </span>
+
+          <p>Innovation</p>
+          <span className=" center">
+          |
+          </span>
+
+          <p>Creativity</p>
+          <span className="center">
+          |
+          </span>
+
+          <p>Networking</p>
+           <span className=" center">
+          |
+          </span>
+
+          <p className="whitespace-nowrap">World-class Speakers</p>
+          <span className=" center">
+          |
+          </span>
+          <p>#JosTechFest</p>
+           <span className="center">
+            |
+          </span>
+
+           <p className="whitespace-nowrap"> Welcome to TechFest 2025</p>
+          <span className="center">
+          |
+          </span>
         </motion.div>
       </div>
 

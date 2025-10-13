@@ -9,6 +9,7 @@ import Host from "./components/landing/host";
 import Keyspeaker from "./components/landing/keySpeakers";
 import Venue from "./components/landing/venue";
 import Body from "./components/landing/body";
+import Gallery from "./components/landing/gallery";
 
 export default function LandingPage() {
   return (
@@ -19,6 +20,7 @@ export default function LandingPage() {
         <Keyspeaker/>
 				<Agenda />
 				<Partners />
+        <Gallery />
         <Venue />
 			</div>
 	  </main>

@@ -5,18 +5,37 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { Typewriter } from "react-simple-typewriter"
 
+// const heroImages = [
+//   "/images/https:/77iiucovgsphsggt.public.blob.vercel-storage.com/pic%2040%29.jpg",
+//   "/images/jtf-21.jpg",
+//   "/images/jtf-43.jpg",
+//   "/images/jtf-7.jpg",
+//   "/images/jtf-40.jpg",
+//   "/images/jtf-8.jpg",
+//   "/images/jtf-18.jpg",
+//   "/images/jtf-36.jpg",
+//   "/images/jtf-3.jpg",
+//   "/images/jtf-2.jpg",
+// ]
 const heroImages = [
-  "/images/jtf-26.jpg",
-  "/images/jtf-21.jpg",
-  "/images/jtf-43.jpg",
-  "/images/jtf-7.jpg",
-  "/images/jtf-40.jpg",
-  "/images/jtf-8.jpg",
-  "/images/jtf-18.jpg",
-  "/images/jtf-36.jpg",
-  "/images/jtf-3.jpg",
-  "/images/jtf-2.jpg",
-]
+  "https://77iiucovgsphsggt.public.blob.vercel-storage.com/pic%2040%29.jpg",
+   "https://77iiucovgsphsggt.public.blob.vercel-storage.com/pic16.jpg",
+   "https://77iiucovgsphsggt.public.blob.vercel-storage.com/picc1.jpg",
+   "https://77iiucovgsphsggt.public.blob.vercel-storage.com/tf%20%2811%20of%2040%29.jpg",
+   "https://77iiucovgsphsggt.public.blob.vercel-storage.com/tf%20%2815%20of%2040%29.jpg",
+   "https://77iiucovgsphsggt.public.blob.vercel-storage.com/tf%20%2821%20of%2040%29.jpg",
+   "https://77iiucovgsphsggt.public.blob.vercel-storage.com/tf%20%2835%20of%2040%29.jpg",
+  // "/images/jtf-21.jpg",
+  // "/images/jtf-43.jpg",
+  // "/images/jtf-7.jpg",
+  // "/images/jtf-40.jpg",
+  // "/images/jtf-8.jpg",
+  // "/images/jtf-18.jpg",
+  // "/images/jtf-36.jpg",
+  // "/images/jtf-3.jpg",
+  // "/images/jtf-2.jpg",
+];
+
 
 export default function Hero() {
   const [bgIndex, setBgIndex] = useState(0)
@@ -30,7 +49,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative flex items-center justify-center w-full min-h-screen text-center overflow-hidden">
+    <section className="relative flex items-center justify-center w-full min-h-screen text-center overflow-hidden ">
       {/* Sliding background images - no AnimatePresence, no opacity white */}
       <div
         className="absolute inset-0 -z-10 w-full h-full bg-center transition-all duration-3000 "
@@ -68,7 +87,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 1 }}
-          className="mt-6 text-lg sm:text-xl text-gray-100"
+          className="mt-6 text-lg sm:text-xl  text-amber-500 font-semibold"
         >
           Slide into a world of creativity — discover speakers, community projects, and hands-on sessions designed to inspire the next generation of African builders.
         </motion.p>
