@@ -40,7 +40,7 @@ const heroImages = [
 export default function Hero() {
   const [bgIndex, setBgIndex] = useState(0)
 
-  // Slide images every 7 seconds
+  // Slide images every 5 seconds
   useEffect(() => {
     const bgInterval = setInterval(() => {
       setBgIndex((prev) => (prev + 1) % heroImages.length)
@@ -50,7 +50,7 @@ export default function Hero() {
 
   return (
     <section className="relative flex items-center justify-center w-full min-h-screen text-center overflow-hidden ">
-      {/* Sliding background images - no AnimatePresence, no opacity white */}
+      
       <div
         className="absolute inset-0 -z-10 w-full h-full bg-center transition-all duration-3000 "
         style={{
