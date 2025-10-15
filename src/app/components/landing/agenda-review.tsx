@@ -1,29 +1,28 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 const agenda = [
   {
-    day: "Day 1 - Innovation",
+    day: "Day 1 ",
     date: "June 12, 2025",
     events: [
-      { time: "09:00 AM", title: "Opening Ceremony & Welcome" },
-      { time: "10:30 AM", title: "Keynote: The Future of African Tech" },
-      { time: "01:00 PM", title: "Panel: Startups & Sustainable Growth" },
-      { time: "03:00 PM", title: "Workshop: Building Scalable Apps" },
+      { time: "00:00 AM", title: "Registration" },
+      { time: "00:00 AM", title: "Introduction & Networking" },
+      { time: "00:00 PM", title: "Welcome Remark" },
+      { time: "00:00 PM", title: "Special Address" },
+      { time: "00:00 PM", title: "Keynote" },
+      // { time: "00:00 PM", title: "Panel Discussion" },
+      // { time: "00:00 PM", title: "Break" },
+      // { time: "00:00 PM", title: "Special Segment" },
+      // { time: "00:00 PM", title: "Closing & Appreciation" },
     ],
   },
   {
-    day: "Day 2 - Collaboration",
+    day: "Day 2 - Exclusive Networking ",
     date: "June 13, 2025",
-    events: [
-      { time: "09:00 AM", title: "Networking Breakfast" },
-      { time: "11:00 AM", title: "Panel: Women in Tech Leadership" },
-      { time: "02:00 PM", title: "Fireside Chat: Investors & Founders" },
-      { time: "04:00 PM", title: "Hackathon Kickoff" },
-    ],
+    events: [{ time: "00:00 AM", title: "Networking (CEOs, CTOs & Founders)" }],
   },
-  
-]
+];
 
 export default function Agenda() {
   return (
@@ -50,7 +49,9 @@ export default function Agenda() {
               transition={{ delay: index * 0.2, duration: 0.7 }}
               className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition"
             >
-              <h3 className="text-xl font-semibold text-green-800">{day.day}</h3>
+              <h3 className="text-xl font-semibold text-green-800">
+                {day.day}
+              </h3>
               <p className="text-sm text-gray-500">{day.date}</p>
               <div className="mt-6 space-y-5">
                 {day.events.map((event, i) => (
@@ -58,7 +59,9 @@ export default function Agenda() {
                     {/* Timeline dot */}
                     <div className="w-2 h-2 mt-2 rounded-full bg-amber-500"></div>
                     <div>
-                      <p className="text-sm font-medium text-gray-900">{event.time}</p>
+                      <p className="text-sm font-medium text-gray-900">
+                        {event.time}
+                      </p>
                       <p className="text-sm text-gray-600">{event.title}</p>
                     </div>
                   </div>
@@ -69,5 +72,5 @@ export default function Agenda() {
         </div>
       </div>
     </section>
-  )
+  );
 }
