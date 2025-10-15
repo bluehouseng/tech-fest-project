@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const agenda = [
   {
     day: "Day 1 ",
-    date: "June 12, 2025",
+    date: "December 5, 2025",
     events: [
       { time: "00:00 AM", title: "Registration" },
       { time: "00:00 AM", title: "Introduction & Networking" },
@@ -19,7 +19,7 @@ const agenda = [
   },
   {
     day: "Day 2 - Exclusive Networking ",
-    date: "June 13, 2025",
+    date: "December 6, 2025",
     events: [{ time: "00:00 AM", title: "Networking (CEOs, CTOs & Founders)" }],
   },
 ];
