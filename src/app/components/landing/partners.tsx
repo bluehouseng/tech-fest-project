@@ -49,16 +49,21 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const partners = [
+  "/images/partners.png",
   "/images/partners2.png",
-  "/images/microsoft1.png",
+  "/images/partners3.png",
   "/images/koenig.jpeg",
   "/images/partners5.png",
   "/images/openai.png",
-  "/images/partners9.png",
-  "/images/partners6.png",
-  "/images/partners9.png",
+  "/images/partners11..png",
+  "/images/axiahub.png",
+  "/images/clockchain.png",
    "/images/partnerslogoi.png",
-    
+    "/images/ahub.png",
+    "/images/boldimg.png",
+    "/images/logo-dark.png",
+     "/images/partners11.png",
+      "/images/axiahub.png",
      "/images/partners8.png",
 ];
 
@@ -94,7 +99,7 @@ export default function Partners() {
                 <Image
                   src={logo}
                   alt={`Partner ${index + 1}`}
-                  width={120}
+                  width={80}
                   height={80}
                   className="object-contain"
                 />
