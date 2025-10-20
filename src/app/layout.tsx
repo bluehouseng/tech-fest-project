@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/landing/header";
 import Footer from "./components/landing/footer";
 import { Poppins } from "next/font/google";
+import { link } from "framer-motion/m";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
