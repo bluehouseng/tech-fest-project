@@ -64,36 +64,41 @@ export default function Header() {
           animate={{ x: ["0%", "-100%"] }}
           transition={{ repeat: Infinity, duration: 35, ease: "linear" }}
         >
+       
+
+
           {[
-            "TechFest",
-            "Creativity",
-            "Networking",
-            "Innovation",
-            "AI",
-            "TechFest",
-            "Creativity",
-            "Networking",
-            "Innovation",
-            "AI",
-            "TechFest",
-            "Creativity",
-            "Networking",
-            "Innovation",
-            "AI",
-            "TechFest",
-            "Creativity",
-            "Networking",
-            "Innovation",
-            "AI",
-          ].map((item, index) => (
-            <>
-              <p>{item}</p>
-              <img
-                src="https://cdn.prod.website-files.com/6846d69fbd3193edd44b53d5/6870b99aff049e59a56aa432_Star%204.svg"
-                alt="star"
-              />
-            </>
-          ))}
+  "TechFest",
+  "Creativity",
+  "Networking",
+  "Innovation",
+  "AI",
+  "TechFest",
+  "Creativity",
+  "Networking",
+  "Innovation",
+  "AI",
+  "TechFest",
+  "Creativity",
+  "Networking",
+  "Innovation",
+  "AI",
+  "TechFest",
+  "Creativity",
+  "Networking",
+  "Innovation",
+  "AI",
+].map((item, index) => (
+  <div key={index} className="flex items-center gap-2">
+    <p>{item}</p>
+    <img
+      src="https://cdn.prod.website-files.com/6846d69fbd3193edd44b53d5/6870b99aff049e59a56aa432_Star%204.svg"
+      alt="star"
+      className="w-4 h-4"
+    />
+  </div>
+))}
+
         </motion.div>
       </div>
 
