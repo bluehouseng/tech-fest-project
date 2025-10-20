@@ -125,18 +125,19 @@ export default function AboutPage() {
 
   // Hero Slider Images - Add your image paths here
   const heroSliderImages = [
-    "/images/pic8.jpg",
+    "/images/jtf-18.jpg",
     "/images/pic9.webp",
-    "/images/pic10.webp",
+    "/images/jtf-43.jpg",
     "/images/pic11.webp"
   ];
 
   // About Section Slider Images - Add your image paths here
   const aboutSliderImages = [
-    "/images/pic10.webp",
-    "/images/pic11.webp",
-    "/images/pic13.jpg",
-    "/images/pic12.jpg"
+    "/images/jtf-7.jpg",
+     "/images/jtf-2.jpg",
+      "/images/jtf-3.jpg",
+       "/images/jtf-4.jpg",
+   
   ];
 
   return (
