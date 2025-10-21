@@ -88,6 +88,30 @@ export default function Header() {
   "Networking",
   "Innovation",
   "AI",
+  
+  "TechFest",
+  "Creativity",
+  "Networking",
+  "Innovation",
+  "AI",
+  
+  "TechFest",
+  "Creativity",
+  "Networking",
+  "Innovation",
+  "AI",
+  
+  "TechFest",
+  "Creativity",
+  "Networking",
+  "Innovation",
+  "AI",
+  
+  "TechFest",
+  "Creativity",
+  "Networking",
+  "Innovation",
+  "AI",
 ].map((item, index) => (
   <div key={index} className="flex items-center gap-2">
     <p>{item}</p>
