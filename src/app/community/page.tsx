@@ -101,9 +101,9 @@ const CommunityPage: React.FC = () => {
               slidesPerView={3}
               centeredSlides={true}
               loop={true}
-              speed={2500} 
+              speed={2500}
               autoplay={{
-                delay: 3000, 
+                delay: 3000,
                 disableOnInteraction: false,
               }}
               pagination={{ clickable: true, el: ".custom-pagination" }}
@@ -127,11 +127,10 @@ const CommunityPage: React.FC = () => {
                   className="flex justify-center items-center h-fit p-4"
                 >
                   <div
-                    className={`transition-all duration-4000 ease-in-out bg-white shadow-lg rounded-lg text-center border h-72 sm:h-80 md:h-84 w-full max-w-xs sm:max-w-sm overflow-hidden ${
-                      index === activeIndex
+                    className={`transition-all duration-4000 ease-in-out bg-white shadow-lg rounded-lg text-center border h-72 sm:h-80 md:h-84 w-full max-w-xs sm:max-w-sm overflow-hidden ${index === activeIndex
                         ? "scale-105 border-green-500 shadow-xl"
                         : "scale-90 opacity-80"
-                    }`}
+                      }`}
                   >
                     {/* ✅ Avatar Image Section */}
                     <div className="flex justify-center mt-4">
@@ -172,7 +171,37 @@ const CommunityPage: React.FC = () => {
           </div>
 
           {/* ✅ Custom Pagination */}
-          <div className="custom-pagination flex justify-center mt-3 space-x-2 sm:space-x-3" />
+          <div className="custom-pagination flex justify-center mt-3  space-x-2 sm:space-x-3" />
+          <style jsx global>{`
+  /* Base bullet style */
+  .custom-pagination .swiper-pagination-bullet {
+    background-color: #22c55e !important; /* Tailwind green-500 */
+    opacity: 0.6;
+    transition: all 0.4s ease-in-out;
+    transform: scale(0.9);
+  }
+
+  /* Active bullet animation */
+  .custom-pagination .swiper-pagination-bullet-active {
+    background-color: #16a34a !important; /* Tailwind green-600 */
+    opacity: 1;
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(22, 163, 74, 0.6); /* green glow */
+  }
+
+  /* Optional: smooth position shift for the moving bullet indicator */
+  .custom-pagination .swiper-pagination-bullet-active-prev,
+  .custom-pagination .swiper-pagination-bullet-active-next {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+
+  /* Extra smooth transition when swiper slides */
+  .swiper-pagination {
+    transition: transform 0.4s ease-in-out;
+  }
+`}</style>
+
         </div>
       </div>
     </div>
