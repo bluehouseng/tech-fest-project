@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Send, Mail, User, MessageSquare, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -302,11 +303,18 @@ const ContactPage = () => {
 
          
           <div className="col-span-1 lg:col-span-2 mt-8 flex justify-center">
-            <button 
-              onClick={() => setShowRegistrationForm(true)}
-              className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 hover:from-green-700 hover:via-emerald-700 hover:to-teal-700 text-white font-bold py-4 px-12 rounded-2xl text-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-green-300">
-              Register Now
-            </button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+  <Link
+    href="https://smartinvites.xyz/forms/68e930bf881d91001bd67f19/6903335d256533001abab3b9/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-green-700 hover:bg-emerald-700 text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+  >
+    Register Now
+  </Link>
+
+  
+</div>
           </div>
         </div>
 

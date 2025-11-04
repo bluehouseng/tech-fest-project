@@ -432,6 +432,10 @@ const AboutPage: React.FC = () => {
    
   ];
 
+  function setOpen(arg0: boolean): void {
+    throw new Error("Function not implemented.");
+  }
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -541,20 +545,23 @@ const AboutPage: React.FC = () => {
             leaders at JosTechFest 2025.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/register"
-              className="inline-block bg-green-900 hover:bg-emerald-700 text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
-            >
-              Register Now
-            </Link>
-            <Link
-              href="/events"
-              className="inline-block border-2 border-slate-300 hover:border-emerald-600 text-slate-700 hover:text-emerald-600 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-200"
-            >
-              Learn More
-            </Link>
-          </div>
+         <div className="flex flex-col sm:flex-row gap-4 justify-center">
+  <Link
+    href="https://smartinvites.xyz/forms/68e930bf881d91001bd67f19/6903335d256533001abab3b9/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-green-700 hover:bg-emerald-700 text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+  >
+    Register Now
+  </Link>
+
+  <Link
+    href="/events"
+    className="inline-block border-2 border-slate-300 hover:border-emerald-600 text-slate-700 hover:text-emerald-600 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-200"
+  >
+    Learn More
+  </Link>
+</div>
         </div>
       </section>
     </div>
