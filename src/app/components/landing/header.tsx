@@ -42,13 +42,18 @@ export default function Header() {
         </nav>
 
         {/* Desktop button */}
-        <Link
-          href="/register"
-          className="hidden md:inline-block border-green-700 border-1 rounded-full px-4 py-1 font-xs hover:bg-green-700 hover:text-white transition"
-          // className="hidden md:inline-block rounded-full border bg-gradient-to-tl from-green-300 to-green-900 cursor-pointer px-4 py-2 text-sm font-medium text-white shadow-sm"
-        >
-          Register Now
-        </Link>
+      
+
+
+<Link
+  href="https://smartinvites.xyz/forms/68e930bf881d91001bd67f19/6903335d256533001abab3b9/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="border border-green-700 rounded-full px-4 py-1 text-xs hover:bg-green-700 hover:text-white transition"
+  onClick={() => setOpen(false)}
+>
+  Register Now
+</Link>
 
         <button
           className="md:hidden text-gray-700"
@@ -218,14 +223,18 @@ export default function Header() {
           <Link href="/contact" onClick={() => setOpen(false)}>
             Contact
           </Link>
+         
+
           <Link
-            href="/register"
-            className="border-green-700 border-1 rounded-full px-4 py-1/2 font-xs hover:bg-green-700 hover:text-white transition"
-            // className="bg-gradient-to-tl from-green-300 to-green-900 px-10 py-2 rounded-full text-white cursor-pointer shadow-sm"
-            onClick={() => setOpen(false)}
-          >
-            Register Now
-          </Link>
+  href="https://smartinvites.xyz/forms/68e930bf881d91001bd67f19/6903335d256533001abab3b9/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="border border-green-700 rounded-full px-4 py-1 text-xs hover:bg-green-700 hover:text-white transition"
+  onClick={() => setOpen(false)}
+>
+  Register Now
+</Link>
+
         </div>
       )}
     </header>
