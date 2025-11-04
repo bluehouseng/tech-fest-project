@@ -169,7 +169,7 @@ export default function Host() {
           transition={{ duration: 0.9 }}
           className="text-4xl font-bold text-green-900 mb-4"
         >
-          Our Hosts
+          Our Anchors
         </motion.h2>
 
         <motion.h5
