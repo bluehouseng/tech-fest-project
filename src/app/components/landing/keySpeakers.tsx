@@ -14,20 +14,27 @@ interface Speaker {
 
 const keynoteSpeakers: Speaker[] = [
   {
-    name: "Dr. Ayo Omotayo",
+    name: "Prof. Goselle Obed Nanjul",
     role: "Keynote Speaker",
-    image: "/images/pic7.jpg",
+    image: "/images/Gosale.jpg",
   },
   {
-    name: "Prof. Jane Doe",
+    name: "Oluwafunmilayo Para Mallam",
     role: "AI & Future of Work",
-    image: "/images/pic2.jpg",
+    image: "/images/Funmi.jpg",
   },
   {
-    name: "Engr. Musa Bello",
-    role: "Tech Policy & Innovation",
-    image: "/images/pic6.jpg",
+    name: "Engr. Christie Dasaro",
+    role: "Speaker",
+    image: "/images/Chriatie.jpg",
   },
+
+   {
+    name: "Mr. David Daser",
+    role: "Speaker",
+    image: "/images/Daser.jpg",
+  },
+   
 ];
 
 export default function KeynoteSpeakers() {
