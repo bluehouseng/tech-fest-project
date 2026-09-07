@@ -41,9 +41,9 @@ const mixerFeatures = [
   { icon: Layers, label: "Open Builder Lounges",       sub: "Co-working space & demo tables" },
 ];
 
-/* ── Previous event CDN image ────────────────────────────── */
+/* ── Previous event HD image (Google Drive) ─────────────── */
 const PREV_EVENT_IMG =
-  "https://77iiucovgsphsggt.public.blob.vercel-storage.com/pic%2040%29.jpg";
+  "https://lh3.googleusercontent.com/d/1ZMrYAMeAjZdj81gULy_9ShrLuQyO2EVo";
 
 export default function BentoGrid() {
   return (

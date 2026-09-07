@@ -3,51 +3,40 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-/* ── Gallery photos ───────────────────────────────────────────
-   Mix of Vercel Blob CDN URLs + local /public/images files
+/* ── Google Drive HD Photos ───────────────────────────────────
+   Direct view links from the shared folder:
+   https://drive.google.com/drive/folders/1j-g3uDDnPqlzrL7nCRRWBZ3SvQTFuA3s
+   Format: https://lh3.googleusercontent.com/d/{FILE_ID}
    ─────────────────────────────────────────────────────────── */
+const toGDriveUrl = (id: string) =>
+  `https://lh3.googleusercontent.com/d/${id}`;
+
 const galleryPhotos = [
-  {
-    src: "https://77iiucovgsphsggt.public.blob.vercel-storage.com/pic%2040%29.jpg",
-    alt: "TechFest attendees gathered in the main hall",
-  },
-  {
-    src: "https://77iiucovgsphsggt.public.blob.vercel-storage.com/pic16.jpg",
-    alt: "Speaker delivering a keynote on stage at TechFest",
-  },
-  {
-    src: "https://77iiucovgsphsggt.public.blob.vercel-storage.com/picc1.jpg",
-    alt: "Networking session at TechFest — builders connecting",
-  },
-  {
-    src: "https://77iiucovgsphsggt.public.blob.vercel-storage.com/tf%20%2811%20of%2040%29.jpg",
-    alt: "Panel discussion with industry experts at TechFest",
-  },
-  {
-    src: "https://77iiucovgsphsggt.public.blob.vercel-storage.com/tf%20%2815%20of%2040%29.jpg",
-    alt: "Audience engaged during a TechFest workshop session",
-  },
-  {
-    src: "https://77iiucovgsphsggt.public.blob.vercel-storage.com/tf%20%2821%20of%2040%29.jpg",
-    alt: "Community builders collaborating at TechFest open lounge",
-  },
-  {
-    src: "https://77iiucovgsphsggt.public.blob.vercel-storage.com/tf%20%2835%20of%2040%29.jpg",
-    alt: "Closing celebration and awards at TechFest",
-  },
-  {
-    src: "/images/jtf-18.jpg",
-    alt: "TechFest evening networking mixer",
-  },
-  {
-    src: "/images/jtf-4.jpg",
-    alt: "TechFest registration and welcome desk",
-  },
-  {
-    src: "/images/jtf-2.jpg",
-    alt: "Builders at a hands-on workshop session, TechFest",
-  },
+  { id: "10HhuWkr6n4EI8vBNUFQLkySRahdnL9PE", alt: "TechFest — builders on the main floor" },
+  { id: "10SZ1JPYQLm2j8n678DH1VAXbjwUSvGq3", alt: "Speaker delivering a keynote at TechFest" },
+  { id: "11jZvmy5Q2EJlVIeFY-3kooAkn_JDq6I7", alt: "Panel discussion with industry experts" },
+  { id: "129AWzwa71ZJW1tZCfEYr45U8gkTZe-IM", alt: "Networking session at TechFest" },
+  { id: "14X-jB6oDv_E0jA4wYUFmgeeuMLC7nr6z", alt: "Audience engaged during a workshop" },
+  { id: "15vIajd67L9YuebAqBUv_0tb4l4Q_TZop", alt: "Community builders collaborating" },
+  { id: "18iuwOQcjgAoo39CnvCM0p_mvlLK190bp", alt: "TechFest open lounge and networking" },
+  { id: "18ljXz2G0tJ5assbtj_-ffWWQYLRw_zvA", alt: "Hands-on workshop session at TechFest" },
+  { id: "1CSXshQebP-9GwLh63yLKvWum4fzVR5DC", alt: "TechFest attendees at registration" },
+  { id: "1D3UWbSdcIK5N6Njj3z-LjAVmu4mowNhp", alt: "Keynote speaker on stage" },
+  { id: "1D5p744qsTZ7EcjgWU-Ua3WYxOSW2k7AH", alt: "TechFest crowd in the main hall" },
+  { id: "1EAtaHNro38IY6wUXYnvWgKf7ONaJBiA8", alt: "Builder presenting a demo" },
+  { id: "1FeGOdweky5XAR0XvgRzk05DNnKgEKe3D", alt: "TechFest evening mixer" },
+  { id: "1I71DW5T-AJEeJ3SlwBjA-UyJRTnTQzx9", alt: "Community roundtable discussion" },
+  { id: "1Jp6mOyLZpvJA11plVGRGuEc3wGsetg2T", alt: "Award ceremony at TechFest" },
+  { id: "1NQErqyBsMDITTro9hrYJHYz3etetcavl", alt: "Speaker with audience Q&A" },
+  { id: "1NjQErPeqihm-pPe2GfYmQw848QIQ1Ufz", alt: "TechFest participants group photo" },
+  { id: "1NwxSSJE5T_4ajzFn6ki2QBqNi6vfXS75", alt: "Workshop hands-on session" },
+  { id: "1R_s9Fvuo9xrdHtSjLxYpUJit97H2W0YQ", alt: "Innovation showcase display" },
+  { id: "1TBRHS5diw8DpOxVAyf-sQ_XDIXeA9fep", alt: "TechFest breakout discussion" },
 ];
+
+/* ── Hero bento card photo (highest energy shot) ─────────── */
+export const BENTO_HERO_PHOTO_ID = "1TWm7GJu32tVZvm6_QtOiuGuFP1O2mRhd";
+export const BENTO_HERO_PHOTO_URL = toGDriveUrl(BENTO_HERO_PHOTO_ID);
 
 export default function Gallery() {
   return (
@@ -107,21 +96,22 @@ export default function Gallery() {
         >
           {galleryPhotos.map((photo, index) => (
             <motion.div
-              key={index}
+              key={photo.id}
               role="listitem"
               initial={{ opacity: 0, scale: 0.97 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
+              transition={{ duration: 0.5, delay: index * 0.04 }}
               className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 cursor-pointer"
             >
               {/* Photo */}
               <img
-                src={photo.src}
+                src={toGDriveUrl(photo.id)}
                 alt={photo.alt}
                 loading="lazy"
                 decoding="async"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                referrerPolicy="no-referrer"
               />
 
               {/* Hover overlay */}
@@ -133,13 +123,13 @@ export default function Gallery() {
                 }}
               />
 
-              {/* Corner accent on hover */}
+              {/* Ring highlight on hover */}
               <div className="absolute inset-0 ring-0 rounded-2xl group-hover:ring-1 group-hover:ring-blue-500/30 transition-all duration-300" />
             </motion.div>
           ))}
         </div>
 
-        {/* Bottom CTA row */}
+        {/* Bottom CTA */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
