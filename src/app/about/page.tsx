@@ -117,9 +117,9 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images, aspectRatio = "4/3" }
 
 const StatsSection: React.FC = () => {
   const stats = [
-    { number: "500+", label: "Attendees" },
+    { number: "1,500+", label: "Attendees" },
     { number: "50+", label: "Speakers" },
-    { number: "25+", label: "Partners" },
+    { number: "100+", label: "Partners" },
   ];
 
   return (
@@ -185,7 +185,7 @@ const AboutPage: React.FC = () => {
 
               <div className="prose prose-lg prose-invert max-w-none text-slate-400">
                 <p className="text-lg leading-relaxed">
-                  At JosTechFest, we are dedicated to empowering the tech
+                  At the TechFest, we are dedicated to empowering the tech
                   community in Northern Nigeria and the Middle Belt by fostering
                   innovation and collaboration.
                 </p>
